@@ -32,8 +32,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
         with:
           node-version: 22
           cache: npm
@@ -54,6 +54,7 @@ jobs:
           OPENAI_BASE_URL: ${{ vars.AI_BASE_URL || 'https://generativelanguage.googleapis.com/v1beta/openai' }}
           OPENAI_MODEL: ${{ vars.AI_MODEL || 'gemini-3.8-flash' }}
           OPENAI_API_KEY: ${{ secrets.AI_API_KEY }}
+          OPENAI_REASONING_EFFORT: ${{ vars.AI_REASONING_EFFORT || 'low' }}
           RESEARCH_CONTACT: ${{ github.server_url }}/${{ github.repository }}
         run: npm run generate -- --from-queue "${{ inputs.count || '3' }}" --report "$RUNNER_TEMP/report.md"
 
@@ -61,11 +62,11 @@ jobs:
         run: npm run publish-drafts
 
       # Natural narration for the new explainers (Kokoro for English, Piper for Swedish).
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
       - run: pip install piper-tts
-      - uses: actions/cache@v4
+      - uses: actions/cache@v5
         with:
           path: |
             .voices
@@ -84,7 +85,7 @@ jobs:
           echo "date=$(date -u +%F)" >> "$GITHUB_OUTPUT"
           [ -f "$RUNNER_TEMP/report.md" ] || echo "No new explainers this time." > "$RUNNER_TEMP/report.md"
 
-      - uses: peter-evans/create-pull-request@v7
+      - uses: peter-evans/create-pull-request@v8
         with:
           branch: content/auto-${{ steps.meta.outputs.date }}
           delete-branch: true

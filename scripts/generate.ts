@@ -123,19 +123,31 @@ async function callAnthropic(prompt: string): Promise<string> {
 
 async function callOpenAICompatible(prompt: string): Promise<string> {
   const base = (process.env.OPENAI_BASE_URL || 'https://api.openai.com/v1').replace(/\/$/, '')
-  const res = await fetch(`${base}/chat/completions`, {
-    method: 'POST',
-    headers: {
-      'content-type': 'application/json',
-      ...(process.env.OPENAI_API_KEY ? { authorization: `Bearer ${process.env.OPENAI_API_KEY}` } : {}),
-    },
-    body: JSON.stringify({
-      model: process.env.OPENAI_MODEL || 'gpt-4o-mini',
-      temperature: 0.4,
-      messages: [{ role: 'user', content: prompt }],
-    }),
-    signal: AbortSignal.timeout(180000),
-  })
+  const started = Date.now()
+  let res: Response
+  try {
+    res = await fetch(`${base}/chat/completions`, {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+        ...(process.env.OPENAI_API_KEY ? { authorization: `Bearer ${process.env.OPENAI_API_KEY}` } : {}),
+      },
+      body: JSON.stringify({
+        model: process.env.OPENAI_MODEL || 'gpt-4o-mini',
+        temperature: 0.4,
+        // Summarising given sources needs little deliberation, and reasoning models
+        // that "think" at full depth by default can take minutes. Only sent when set,
+        // since not every OpenAI-compatible server accepts it.
+        ...(process.env.OPENAI_REASONING_EFFORT ? { reasoning_effort: process.env.OPENAI_REASONING_EFFORT } : {}),
+        messages: [{ role: 'user', content: prompt }],
+      }),
+      signal: AbortSignal.timeout(300000),
+    })
+  } catch (e) {
+    if ((e as Error).name === 'TimeoutError') throw new RetryableError('no response within 5 minutes')
+    throw e
+  }
+  console.log(`  model answered in ${Math.round((Date.now() - started) / 1000)}s`)
   if (res.status === 429 || res.status >= 500) throw new RetryableError(`${res.status} ${(await res.text()).slice(0, 300)}`)
   if (!res.ok) throw new Error(`${res.status} ${(await res.text()).slice(0, 500)}`)
   const data = (await res.json()) as { choices: { message: { content: string } }[] }
