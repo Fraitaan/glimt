@@ -24,6 +24,64 @@ interface Props {
   upNext?: Experience
 }
 
+const EASE = [0.2, 0.7, 0.2, 1] as const
+
+/** Scene changes: the first scene zooms in, the rest rotate through these. */
+const TRANSITIONS = [
+  {
+    initial: { opacity: 0, scale: 1.14, filter: 'blur(14px)' },
+    animate: { opacity: 1, scale: 1, filter: 'blur(0px)' },
+    exit: { opacity: 0, scale: 0.94, filter: 'blur(8px)' },
+    transition: { duration: 0.7, ease: EASE },
+  },
+  {
+    initial: { opacity: 0, x: 60 },
+    animate: { opacity: 1, x: 0 },
+    exit: { opacity: 0, x: -60, filter: 'blur(6px)' },
+    transition: { duration: 0.55, ease: EASE },
+  },
+  {
+    initial: { opacity: 0, y: 40, scale: 0.97 },
+    animate: { opacity: 1, y: 0, scale: 1 },
+    exit: { opacity: 0, y: -30, filter: 'blur(6px)' },
+    transition: { duration: 0.55, ease: EASE },
+  },
+  {
+    initial: { opacity: 0, clipPath: 'inset(100% 0 0 0)' },
+    animate: { opacity: 1, clipPath: 'inset(0% 0 0 0)' },
+    exit: { opacity: 0, scale: 1.06, filter: 'blur(10px)' },
+    transition: { duration: 0.7, ease: [0.6, 0, 0.2, 1] as const },
+  },
+  {
+    initial: { opacity: 0, scale: 0.86, rotate: -2 },
+    animate: { opacity: 1, scale: 1, rotate: 0 },
+    exit: { opacity: 0, x: 40, filter: 'blur(6px)' },
+    transition: { duration: 0.6, ease: [0.2, 0.9, 0.3, 1.1] as const },
+  },
+]
+
+/** Where the background colour fields drift to on each scene. */
+const BLOB_POSITIONS = [
+  ['0%', '0%'],
+  ['38%', '22%'],
+  ['10%', '55%'],
+  ['-12%', '30%'],
+  ['30%', '-8%'],
+  ['22%', '48%'],
+]
+
+// Floating specks of light; fixed so cards don't reshuffle on re-render.
+const MOTES: CSSProperties[] = Array.from({ length: 16 }, (_, i) => {
+  const r = (n: number) => ((Math.sin(i * 12.9898 + n * 78.233) * 43758.5453) % 1 + 1) % 1
+  return {
+    left: `${r(1) * 100}%`,
+    top: `${40 + r(2) * 70}%`,
+    width: `${2 + r(3) * 4}px`,
+    animationDuration: `${9 + r(4) * 12}s`,
+    animationDelay: `${-r(5) * 20}s`,
+  } as CSSProperties
+})
+
 export function ExperienceCard({ exp, canPlay, isActive, topicLabel, onTopicClick, onDetails, onAdvance, upNext }: Props) {
   const t = useT()
   const settings = useSettings()
@@ -108,22 +166,21 @@ export function ExperienceCard({ exp, canPlay, isActive, topicLabel, onTopicClic
     { icon: 'text', label: t('feed.read'), onClick: () => onDetails(exp, 'read') },
   ]
 
-  const style = { '--accent': cat.accent } as CSSProperties
+  const scenePos = BLOB_POSITIONS[player.index % BLOB_POSITIONS.length]
+  const style = { '--accent': cat.accent, '--bx': scenePos[0], '--by': scenePos[1] } as CSSProperties
   const sceneMotion =
     level === 'minimal'
       ? { initial: { opacity: 1 }, animate: { opacity: 1 }, exit: { opacity: 0 }, transition: { duration: 0 } }
-      : {
-          initial: { opacity: 0, y: level === 'full' ? 26 : 0 },
-          animate: { opacity: 1, y: 0 },
-          exit: { opacity: 0, y: level === 'full' ? -18 : 0, filter: level === 'full' ? 'blur(6px)' : 'blur(0px)' },
-          transition: { duration: 0.45, ease: [0.2, 0.7, 0.2, 1] as const },
-        }
+      : level === 'reduced'
+        ? { initial: { opacity: 0 }, animate: { opacity: 1 }, exit: { opacity: 0 }, transition: { duration: 0.4 } }
+        : TRANSITIONS[player.index === 0 ? 0 : 1 + ((player.index - 1) % (TRANSITIONS.length - 1))]
 
   return (
     <article className={`card ${player.playing ? 'is-playing' : 'is-paused'}`} style={style} aria-label={exp.title}>
       <div className="card-bg" aria-hidden>
         <span className="blob blob-a" />
         <span className="blob blob-b" />
+        {level === 'full' && MOTES.map((m, i) => <span key={i} className="mote" style={m} />)}
       </div>
 
       <header className="card-top">
@@ -169,7 +226,10 @@ export function ExperienceCard({ exp, canPlay, isActive, topicLabel, onTopicClic
       <div className="stage" onClick={onStageTap}>
         <AnimatePresence initial={false}>
           <motion.div key={player.index} className="scene" {...sceneMotion}>
-            <SceneView scene={player.scene} t={player.t} duration={player.duration} beat={player.beat} lang={exp.language} t9n={t} />
+            {/* Slow "camera" move over the whole scene; a CSS animation so it pauses with the card. */}
+            <div className={`camera cam-${player.index % 4}`} style={{ '--dur': `${player.duration}s` } as CSSProperties}>
+              <SceneView scene={player.scene} t={player.t} duration={player.duration} beat={player.beat} lang={exp.language} t9n={t} />
+            </div>
           </motion.div>
         </AnimatePresence>
         <AnimatePresence>

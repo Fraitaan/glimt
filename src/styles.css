@@ -955,6 +955,360 @@ a {
   }
 }
 
+/* ===== Living motion =========================================================
+   Things that keep happening while a scene plays. All are CSS animations so
+   they freeze when the card pauses, and they switch off at lower motion levels. */
+
+/* slow camera over each scene */
+.camera {
+  width: 100%;
+  transform-origin: 50% 50%;
+  animation: var(--cam, cam-a) var(--dur, 8s) cubic-bezier(0.35, 0, 0.45, 1) both;
+}
+.cam-0 {
+  --cam: cam-a;
+}
+.cam-1 {
+  --cam: cam-b;
+}
+.cam-2 {
+  --cam: cam-c;
+}
+.cam-3 {
+  --cam: cam-d;
+}
+
+@keyframes cam-a {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.045) translate(-0.8%, -0.8%);
+  }
+}
+@keyframes cam-b {
+  from {
+    transform: scale(1.04) translateX(1.2%);
+  }
+  to {
+    transform: scale(1) translateX(-0.6%);
+  }
+}
+@keyframes cam-c {
+  from {
+    transform: translateY(1.4%);
+  }
+  to {
+    transform: scale(1.035) translateY(-1.2%);
+  }
+}
+@keyframes cam-d {
+  from {
+    transform: scale(1.01) rotate(-0.5deg);
+  }
+  to {
+    transform: scale(1.045) rotate(0.5deg);
+  }
+}
+
+/* giant outlined word drifting behind the scene */
+.scene-inner {
+  position: relative;
+  isolation: isolate;
+}
+
+.ghost {
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  top: 50%;
+  margin-top: -0.55em;
+  font-family: var(--font-display);
+  font-size: clamp(120px, 36vw, 240px);
+  font-weight: 700;
+  font-style: italic;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  white-space: nowrap;
+  color: transparent;
+  -webkit-text-stroke: 1.4px color-mix(in oklab, var(--accent) 60%, transparent);
+  opacity: 0.22;
+  pointer-events: none;
+  animation: ghost var(--dur, 8s) linear both;
+}
+
+@keyframes ghost {
+  from {
+    transform: translateX(18%);
+    opacity: 0;
+  }
+  12% {
+    opacity: 0.22;
+  }
+  88% {
+    opacity: 0.22;
+  }
+  to {
+    transform: translateX(-55%);
+    opacity: 0;
+  }
+}
+
+/* background colour fields move to a new place on every scene */
+.blob-a {
+  translate: var(--bx, 0) var(--by, 0);
+  transition: translate 2.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.blob-b {
+  translate: calc(var(--bx, 0) * -0.8) calc(var(--by, 0) * -0.6);
+  transition: translate 2.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* floating specks of light */
+.mote {
+  position: absolute;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: color-mix(in oklab, var(--accent) 55%, white);
+  box-shadow: 0 0 10px color-mix(in oklab, var(--accent) 80%, transparent);
+  opacity: 0;
+  animation: mote linear infinite;
+}
+
+@keyframes mote {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.7;
+  }
+  80% {
+    opacity: 0.45;
+  }
+  100% {
+    transform: translate(26px, -62vh);
+    opacity: 0;
+  }
+}
+
+/* karaoke: words light up as they are spoken */
+.karaoke span:not(.lit) {
+  color: color-mix(in oklab, currentColor 34%, transparent);
+}
+.karaoke .em:not(.lit) {
+  color: color-mix(in oklab, var(--accent) 40%, transparent);
+}
+.karaoke span {
+  transition: color 0.35s ease;
+}
+.karaoke .em {
+  background: linear-gradient(color-mix(in oklab, var(--accent) 30%, transparent), color-mix(in oklab, var(--accent) 30%, transparent)) no-repeat 0 90% / 0% 0.32em;
+  transition:
+    color 0.35s ease,
+    background-size 0.7s cubic-bezier(0.6, 0, 0.2, 1);
+}
+.karaoke .em.lit {
+  background-size: 100% 0.32em;
+}
+.karaoke .word.em.lit {
+  animation: em-pop 0.55s cubic-bezier(0.2, 0.9, 0.3, 1.3);
+}
+
+@keyframes em-pop {
+  40% {
+    scale: 1.12;
+  }
+}
+
+/* illustrations keep living after they are drawn */
+.flow {
+  stroke: color-mix(in oklab, currentColor 35%, white);
+  stroke-width: 3.4;
+  stroke-dasharray: 7 93;
+  stroke-dashoffset: 100;
+  opacity: 0;
+  animation:
+    flow 3.4s linear infinite,
+    flow-in 0.6s ease forwards;
+}
+
+@keyframes flow {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes flow-in {
+  to {
+    opacity: 0.9;
+  }
+}
+
+.pulse {
+  animation: pulse 2.6s ease-in-out infinite;
+}
+@keyframes pulse {
+  50% {
+    scale: 1.5;
+  }
+}
+
+.breathe {
+  animation: breathe 4.5s ease-in-out infinite;
+}
+@keyframes breathe {
+  50% {
+    fill-opacity: 0.35;
+  }
+}
+
+/* stat: meter fills with the count, then sparks */
+.stat {
+  animation: glow 3.2s ease-in-out infinite;
+}
+@keyframes glow {
+  50% {
+    text-shadow: 0 0 70px color-mix(in oklab, var(--accent) 60%, transparent);
+  }
+}
+
+.stat-meter {
+  position: relative;
+  width: min(100%, 280px);
+  height: 6px;
+  margin: -4px 0 22px;
+  border-radius: 6px;
+  background: rgba(243, 237, 226, 0.08);
+}
+.stat-meter-fill {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: var(--accent);
+  box-shadow: 0 0 14px var(--accent);
+  transform-origin: left;
+}
+.sparks {
+  position: absolute;
+  right: 0;
+  top: 50%;
+}
+.sparks i {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  margin: -3px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 8px var(--accent);
+}
+
+/* lists and timelines: the newest point is highlighted */
+.items li {
+  transition:
+    background 0.5s,
+    border-color 0.5s,
+    box-shadow 0.5s;
+}
+.items li.is-new {
+  background: color-mix(in oklab, var(--accent) 11%, transparent);
+  border-color: color-mix(in oklab, var(--accent) 55%, transparent);
+  box-shadow: 0 0 26px -6px color-mix(in oklab, var(--accent) 55%, transparent);
+}
+
+.timeline .dot {
+  transition: background 0.4s;
+}
+.timeline .dot::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  opacity: 0;
+}
+.timeline li.is-new .dot {
+  background: var(--accent);
+}
+.timeline li.is-new .dot::after {
+  animation: ring 1.6s ease-out infinite;
+}
+@keyframes ring {
+  from {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  to {
+    transform: scale(2.6);
+    opacity: 0;
+  }
+}
+
+/* comparison: focus moves from one side to the other */
+.side {
+  transition:
+    filter 0.6s,
+    scale 0.6s,
+    border-color 0.6s;
+}
+.focus-a .side-a {
+  border-color: color-mix(in oklab, var(--accent) 50%, transparent);
+}
+.focus-b .side-a {
+  filter: brightness(0.62) saturate(0.7);
+  scale: 0.97;
+}
+
+/* question mark wobbles while you think; the answer flashes in */
+.qmark-glyph {
+  display: inline-block;
+  animation: wobble 3.6s ease-in-out infinite;
+}
+@keyframes wobble {
+  0%,
+  100% {
+    transform: rotate(-7deg) translateY(0);
+  }
+  50% {
+    transform: rotate(7deg) translateY(-12px);
+  }
+}
+
+.answer {
+  position: relative;
+}
+.flash {
+  position: absolute;
+  inset: -14px -18px;
+  z-index: -1;
+  border-radius: 18px;
+  background: radial-gradient(closest-side, color-mix(in oklab, var(--accent) 45%, transparent), transparent);
+  opacity: 0;
+  animation: flash 1.1s ease-out;
+}
+@keyframes flash {
+  25% {
+    opacity: 1;
+  }
+}
+
+/* paused card: everything holds still */
+.card.is-paused :is(.camera, .ghost, .mote, .flow, .pulse, .breathe, .stat, .qmark-glyph, .timeline .dot::after) {
+  animation-play-state: paused;
+}
+.card.is-paused .timeline li.is-new .dot::after {
+  animation-play-state: paused;
+}
+
+[data-motion='reduced'] :is(.camera, .ghost, .mote, .pulse, .breathe, .stat, .qmark-glyph, .karaoke .word.em.lit),
+[data-motion='minimal'] :is(.camera, .ghost, .mote, .pulse, .breathe, .stat, .qmark-glyph, .karaoke .word.em.lit, .flash) {
+  animation: none;
+}
+[data-motion='reduced'] :is(.ghost, .flow),
+[data-motion='minimal'] :is(.ghost, .flow, .mote) {
+  display: none;
+}
+
 /* ===== Motion levels ========================================================= */
 
 [data-motion='reduced'] .blob,

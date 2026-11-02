@@ -1,4 +1,5 @@
 import { motion } from 'motion/react'
+import { Fragment } from 'react'
 import type { IllustrationKey } from '../content/illustrationKeys'
 
 /**
@@ -314,9 +315,20 @@ export function Illustration({ name, size = 200 }: { name: IllustrationKey; size
         }
         switch (el[0]) {
           case 'p':
-            return <motion.path key={k} d={el[1]} {...draw} />
+            // After drawing, a spark of light keeps travelling along the line.
+            return (
+              <Fragment key={k}>
+                <motion.path d={el[1]} {...draw} />
+                <path d={el[1]} className="flow" pathLength={100} style={{ animationDelay: `${delay + 1}s, ${delay + 1}s` }} />
+              </Fragment>
+            )
           case 'c':
-            return <motion.circle key={k} cx={el[1]} cy={el[2]} r={el[3]} {...draw} />
+            return (
+              <Fragment key={k}>
+                <motion.circle cx={el[1]} cy={el[2]} r={el[3]} {...draw} />
+                <circle cx={el[1]} cy={el[2]} r={el[3]} className="flow" pathLength={100} style={{ animationDelay: `${delay + 1}s, ${delay + 1}s` }} />
+              </Fragment>
+            )
           case 'f':
             return (
               <motion.path
@@ -324,6 +336,8 @@ export function Illustration({ name, size = 200 }: { name: IllustrationKey; size
                 d={el[1]}
                 fill="currentColor"
                 stroke="none"
+                className="breathe"
+                style={{ animationDelay: `${delay + 1.2}s` }}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 0.16 }}
                 transition={{ duration: 0.8, delay: delay + 0.3 }}
@@ -338,7 +352,8 @@ export function Illustration({ name, size = 200 }: { name: IllustrationKey; size
                 r={el[3]}
                 fill="currentColor"
                 stroke="none"
-                style={{ transformOrigin: `${el[1]}px ${el[2]}px` }}
+                className="pulse"
+                style={{ transformOrigin: `${el[1]}px ${el[2]}px`, animationDelay: `${delay + 1}s` }}
                 {...pop}
               />
             )
