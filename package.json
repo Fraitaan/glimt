@@ -11,7 +11,8 @@
     "new": "tsx scripts/new.ts",
     "generate": "tsx scripts/generate.ts",
     "publish-drafts": "tsx scripts/publish-drafts.ts",
-    "check-links": "tsx scripts/check-links.ts"
+    "check-links": "tsx scripts/check-links.ts",
+    "narrate": "tsx scripts/narrate.ts"
   },
   "dependencies": {
     "@fontsource-variable/fraunces": "^5.3.0",
@@ -28,6 +29,8 @@
     "@types/react": "^18.3.31",
     "@types/react-dom": "^18.3.7",
     "@vitejs/plugin-react": "^6.2.1",
+    "ffmpeg-static": "^5.3.0",
+    "kokoro-js": "^1.2.1",
     "tailwindcss": "^4.3.3",
     "tsx": "^4.23.15",
     "typescript": "^7.0.2",

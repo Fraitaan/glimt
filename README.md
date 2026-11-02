@@ -5,7 +5,7 @@ A mobile-first, TikTok-style vertical feed where every item is a short, sourced 
 - **25 curated explainers** (plus 2 Swedish translations) across 10 topics, every one with real sources and an honest evidence label (*Well established*, *Good evidence*, *Debated*, *Historical record*, *Idea / framework*, *Simplified*).
 - **8 scene templates**: kinetic typography, illustration, comparison, timeline, animated statistic, breakdown, question → answer, and surprising reveal — with 28 animated line illustrations.
 - **Swipe** between explainers, **tap** to pause, **tap the edges** to skip scenes, replay, save, like / "less like this", read mode with full transcript and sources.
-- **Optional narration** with the device's built-in voices (free, offline).
+- **Optional narration** with natural neural voices recorded ahead of time (free, open-source, works offline); your device's voices as fallback.
 - **Lightweight personalization** (default 60% interests / 25% related / 15% discovery, adjustable), all stored on your device.
 - **English and Swedish UI**, reduced-motion support, installable as a PWA, works offline after the first visit.
 
@@ -91,7 +91,7 @@ How it works:
 1. Takes the next 3 topics from `content/topics.txt` (format `topic | category | language`). When the queue is empty it uses Wikipedia's featured article of the day.
 2. **Fetches real source text first**: Wikipedia (en/sv) plus peer-reviewed review articles from Europe PMC for science, health, psychology, learning, money and AI topics.
 3. A free model (Gemini by default) writes the explainer **only from that material**. Drafts that cite anything they weren't given are rejected into `content/drafts/rejected/`.
-4. Validates the schema, checks every link (DOIs against the DOI registry) and builds the site.
+4. Validates the schema, checks every link (DOIs against the DOI registry), records narration for the new explainers and builds the site.
 5. Opens a PR whose description shows each script, its sources and any warnings. Review it on your phone, edit or delete files if needed, and merge. The deploy workflow then publishes.
 
 One-time setup:
@@ -129,6 +129,23 @@ The pipeline: topic → **fetch source text** (Wikipedia, Europe PMC) → prompt
 
 > **Development-time vs. scheduled generation.** The initial library was written during development with Claude Code; that's a one-off. Ongoing generation is the weekly GitHub Actions job above, using a free model — it never uses Claude. Every batch still waits for your review in a pull request; keeping a human in the loop is deliberate.
 
+### Narration
+
+The library's narration is pre-recorded with free, open-source neural voices that run on your own machine — no API, no key, no cost:
+
+| Language | Engine | Default voice |
+| --- | --- | --- |
+| English | [Kokoro-82M](https://huggingface.co/hexgrad/Kokoro-82M) (Apache-2.0) via `kokoro-js` | `af_heart` |
+| Swedish | [Piper](https://github.com/OHF-Voice/piper1-gpl) | `sv_SE-lisa-medium` |
+
+```bash
+pip install piper-tts         # once; only needed for Swedish
+npm run narrate               # records every line that has no clip yet
+npm run narrate -- --dry      # list what's missing
+```
+
+Clips are MP3s in `public/narration/` (≈6 KB per second of speech), named after a hash of voice + text, and `content/narration.json` maps each spoken line to its clip. Editing a scene re-records only that line; unused clips are deleted. Change voices with `NARRATION_VOICE_EN` (any Kokoro voice, e.g. `bm_george`) or `NARRATION_VOICE_SV` (`sv_SE-alma-medium`, `sv_SE-nst-medium`) — that re-records everything in that language. The weekly job runs this automatically. Explainers added in Settings, or a device voice picked in Settings, use the browser's speech synthesis.
+
 ### Content format (short version)
 
 ```jsonc
@@ -165,7 +182,7 @@ Durations are minimums: the player automatically extends any scene that has more
 | Item | Cost |
 | --- | --- |
 | Hosting (Cloudflare Pages / GitHub Pages) | 0 kr |
-| Narration (browser speech synthesis) | 0 kr |
+| Narration (pre-recorded open-source voices, device voices as fallback) | 0 kr |
 | Database / accounts / backend | none exist |
 | Adding content by hand or via a free AI chat | 0 kr |
 | Optional API generation | only if you choose a paid provider; pay per explainer |
@@ -174,7 +191,7 @@ The app works indefinitely with the existing library even if every AI service di
 
 ## Limitations
 
-- **Narration** quality depends on the device's voices; Swedish voices are good on iOS/macOS, variable on Android/Windows. Some browsers don't report when speech ends — the player has a safety timeout so it never stalls. iOS requires one tap before speech can start (a "Tap to enable narration" chip appears).
+- **Narration**: library items use pre-recorded voices; content without a clip falls back to the device's voices, whose quality varies (good on iOS/macOS, poor on Windows). Clips are cached for offline use once played. iOS requires one tap before audio can start (a "Tap to enable narration" chip appears).
 - **Data is per-browser.** No sync — use Export/Import. Clearing site data (or iOS evicting storage for rarely used sites) erases history; installing to the Home Screen makes iOS storage more durable.
 - **Content added in Settings stays on that device** until you export it or move it into `content/experiences/`.
 - **Library size**: all content is bundled into the app (~3 KB per explainer). That's fine for hundreds of items; if it ever grows into the thousands, split it into lazily loaded JSON.
@@ -186,14 +203,14 @@ The app works indefinitely with the existing library even if every AI service di
 ```
 content/experiences/   curated library (one JSON per explainer)
 content/drafts/        generated/hand-written drafts awaiting review
-scripts/               validate, check-links, generate, new, publish-drafts
+scripts/               validate, check-links, generate, narrate, new, publish-drafts
 src/content/           schema (zod), categories, library loader, AI prompt
 src/feed/              feed, player engine (usePlayer), card, sheets
 src/scenes/            scene templates + SVG illustrations
 src/pages/             Explore, Saved, Settings
 src/store/             localStorage state + actions
 src/lib/               recommender, narration, router, motion level
-public/                PWA manifest, service worker, icons
+public/                PWA manifest, service worker, icons, narration clips
 ```
 
 Stack: React 18, TypeScript, Vite, Tailwind CSS 4 (base layer) + hand-written CSS, Motion, Zod. Fonts (Fraunces, Inter) are self-hosted via Fontsource.
