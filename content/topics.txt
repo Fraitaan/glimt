@@ -5,9 +5,6 @@
 #             productivity, ai, business, curiosities
 # When the queue is empty, today's featured Wikipedia article is used instead.
 
-placebo effect | psychology
-mere exposure effect | psychology
-frequency illusion | psychology
 Stockholm syndrome | psychology
 vaccine immune response | health
 yawning | health
@@ -24,3 +21,7 @@ Lindy effect | business
 Parkinson's law | productivity
 Pomodoro technique | productivity
 Turing test | ai
+
+placebo effect | psychology | en
+mere exposure effect | psychology | en
+frequency illusion | psychology | en
