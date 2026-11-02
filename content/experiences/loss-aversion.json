@@ -1,0 +1,24 @@
+{
+  "id": "loss-aversion",
+  "title": "Why losing hurts more than winning feels good",
+  "category": "money",
+  "language": "en",
+  "summary": "Loss aversion is the tendency for losses to weigh more than equal gains. It shapes how we react to fees, discounts and investments — though its size is more debated than pop psychology suggests.",
+  "evidence": "debated",
+  "evidenceNote": "Loss aversion is one of the most cited ideas in behavioral economics, but recent research debates how general it is: the effect appears weaker or absent for small, everyday stakes.",
+  "scenes": [
+    { "role": "hook", "template": "question", "text": "A coin flip: lose 100 kr on tails, win 150 kr on heads. Would you take it?", "answer": "Many people say no — even though, on average, the bet pays.", "duration": 11 },
+    { "role": "explanation", "template": "illustration", "visual": "scale", "text": "Daniel Kahneman and Amos Tversky called this loss aversion: losses tend to feel bigger than equal gains.", "emphasis": ["loss aversion"], "duration": 9 },
+    { "role": "fact", "template": "stat", "value": 2, "prefix": "~", "suffix": "×", "text": "Classic estimates suggested losses weigh about twice as much as gains.", "emphasis": ["twice"], "duration": 7 },
+    { "role": "insight", "template": "reveal", "text": "Newer research is more nuanced.", "reveal": "The effect varies a lot — and for small stakes it may be weak or absent.", "duration": 8 },
+    { "role": "example", "template": "comparison", "text": "Where it shows up:", "left": { "label": "Framing", "text": "A 'fee' often stings more than a missed 'discount'" }, "right": { "label": "Investing", "text": "People sell winners early and cling to losers" }, "duration": 10 },
+    { "role": "takeaway", "template": "kinetic", "text": "Ask: would I decide the same if it were framed as a gain?", "emphasis": ["framed as a gain"], "duration": 6 }
+  ],
+  "sources": [
+    { "title": "Prospect Theory: An Analysis of Decision under Risk", "publisher": "Econometrica (Kahneman & Tversky)", "year": 1979, "url": "https://doi.org/10.2307/1914185" },
+    { "title": "Advances in prospect theory: cumulative representation of uncertainty", "publisher": "Journal of Risk and Uncertainty (Tversky & Kahneman)", "year": 1992, "url": "https://doi.org/10.1007/BF00122574" },
+    { "title": "The Loss of Loss Aversion: Will It Loom Larger Than Its Gain?", "publisher": "Journal of Consumer Psychology (Gal & Rucker)", "year": 2018, "url": "https://doi.org/10.1002/jcpy.1047" },
+    { "title": "Are Investors Reluctant to Realize Their Losses?", "publisher": "The Journal of Finance (Odean)", "year": 1998, "url": "https://doi.org/10.1111/0022-1082.00072" }
+  ],
+  "tags": ["behavioral economics", "decisions", "bias", "investing"]
+}

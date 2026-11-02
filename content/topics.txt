@@ -1,0 +1,26 @@
+# Topic queue for automated generation.
+# The weekly job takes topics from the top and removes them.
+# Format:  topic | category | language     (category and language are optional)
+# Categories: psychology, science, history, philosophy, money, health,
+#             productivity, ai, business, curiosities
+# When the queue is empty, today's featured Wikipedia article is used instead.
+
+placebo effect | psychology
+mere exposure effect | psychology
+frequency illusion | psychology
+Stockholm syndrome | psychology
+vaccine immune response | health
+yawning | health
+circadian rhythm | health
+active noise cancellation | science
+mantis shrimp vision | curiosities
+Antikythera mechanism | history
+Alfred Nobel and the Nobel Prize | history
+allemansrätten | history | sv
+Occam's razor | philosophy
+trolley problem | philosophy
+opportunity cost | money
+Lindy effect | business
+Parkinson's law | productivity
+Pomodoro technique | productivity
+Turing test | ai

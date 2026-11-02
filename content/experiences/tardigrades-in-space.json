@@ -1,0 +1,21 @@
+{
+  "id": "tardigrades-in-space",
+  "title": "The animal that survived open space",
+  "category": "science",
+  "language": "en",
+  "summary": "Tardigrades can dry out into a dormant 'tun' state. In 2007, a Swedish-led experiment showed some survived ten days exposed to the vacuum of space.",
+  "evidence": "established",
+  "scenes": [
+    { "role": "hook", "template": "kinetic", "text": "Meet the animal that survived open space.", "emphasis": ["open space"], "duration": 5 },
+    { "role": "context", "template": "illustration", "visual": "waterbear", "text": "Tardigrades, or 'water bears', are eight-legged animals usually under a millimetre long. They live in moss, soil and oceans.", "emphasis": ["water bears"], "duration": 10 },
+    { "role": "explanation", "template": "breakdown", "text": "When their home dries out, they enter a state called a 'tun'.", "items": [ { "title": "Curl up", "detail": "Pull in head and legs" }, { "title": "Lose most of their water", "detail": "Metabolism nearly stops" }, { "title": "Wait", "detail": "Revive when water returns" } ], "duration": 11 },
+    { "role": "fact", "template": "reveal", "visual": "satellite", "text": "In 2007, dried tardigrades were sent into orbit on the FOTON-M3 mission.", "reveal": "Some survived ten days exposed to space vacuum — a few even survived the Sun's harsh UV too.", "duration": 12 },
+    { "role": "context", "template": "kinetic", "text": "The experiment was led by researchers at Kristianstad University in Sweden.", "emphasis": ["Sweden"], "duration": 6 },
+    { "role": "takeaway", "template": "kinetic", "text": "Life can be tougher than we imagine — one reason astrobiologists study it.", "emphasis": ["tougher"], "duration": 6 }
+  ],
+  "sources": [
+    { "title": "Tardigrades survive exposure to space in low Earth orbit", "publisher": "Current Biology (Jönsson et al.)", "year": 2008, "url": "https://doi.org/10.1016/j.cub.2008.06.048" },
+    { "title": "Tardigrade", "publisher": "Encyclopaedia Britannica", "url": "https://www.britannica.com/animal/tardigrade" }
+  ],
+  "tags": ["animals", "extremophiles", "space", "biology", "sweden"]
+}

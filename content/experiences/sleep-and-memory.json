@@ -1,0 +1,23 @@
+{
+  "id": "sleep-and-memory",
+  "title": "Your brain studies while you sleep",
+  "category": "health",
+  "language": "en",
+  "summary": "Sleep helps consolidate memories: the brain replays and strengthens some of what you learned during the day. Cutting sleep to study can backfire.",
+  "evidence": "supported",
+  "evidenceNote": "Sleep's role in memory is well supported. Exactly how each sleep stage contributes is still actively researched — the stage-by-stage picture here is simplified.",
+  "scenes": [
+    { "role": "hook", "template": "kinetic", "text": "Sleep isn't downtime for your brain.", "emphasis": ["downtime"], "duration": 5 },
+    { "role": "explanation", "template": "illustration", "visual": "moon", "text": "While you sleep, your brain replays and strengthens some of what you learned during the day.", "emphasis": ["replays"], "duration": 8 },
+    { "role": "explanation", "template": "breakdown", "text": "Different stages seem to do different jobs.", "items": [ { "title": "Deep sleep", "detail": "Linked to consolidating facts and events" }, { "title": "REM sleep", "detail": "Linked to emotional memories and some skills" } ], "duration": 10 },
+    { "role": "fact", "template": "stat", "value": 7, "suffix": "+ h", "text": "Health authorities recommend that adults get at least 7 hours of sleep a night.", "emphasis": ["at least 7 hours"], "duration": 7 },
+    { "role": "insight", "template": "comparison", "text": "So when you're learning something:", "left": { "label": "All-nighter", "text": "Less sleep for memories to consolidate" }, "right": { "label": "Study, then sleep", "text": "Gives your brain the chance to lock it in" }, "duration": 9 },
+    { "role": "takeaway", "template": "kinetic", "text": "Sleep is part of studying, not a break from it.", "emphasis": ["part of studying"], "duration": 5 }
+  ],
+  "sources": [
+    { "title": "About sleep's role in memory", "publisher": "Physiological Reviews (Rasch & Born)", "year": 2013, "url": "https://doi.org/10.1152/physrev.00032.2012" },
+    { "title": "Brain Basics: Understanding Sleep", "publisher": "National Institute of Neurological Disorders and Stroke (NIH)", "url": "https://www.ninds.nih.gov/health-information/public-education/brain-basics/brain-basics-understanding-sleep" },
+    { "title": "About Sleep", "publisher": "U.S. Centers for Disease Control and Prevention", "url": "https://www.cdc.gov/sleep/about/index.html" }
+  ],
+  "tags": ["sleep", "memory", "learning", "brain"]
+}

@@ -1,0 +1,22 @@
+{
+  "id": "vasa-warship-sv",
+  "translationOf": "vasa-warship",
+  "title": "Krigsskeppet som sjönk första dagen",
+  "category": "history",
+  "language": "sv",
+  "summary": "År 1628 kantrade Sveriges nya krigsskepp Vasa bara minuter in i jungfruresan. Östersjöns bräckta vatten bevarade det så väl att skeppet i dag är till cirka 95 procent original.",
+  "evidence": "historical",
+  "scenes": [
+    { "role": "hook", "template": "kinetic", "text": "Sveriges mäktigaste krigsskepp sjönk på sin allra första resa.", "emphasis": ["första resa"], "duration": 6 },
+    { "role": "context", "template": "illustration", "visual": "ship", "text": "Den 10 augusti 1628 seglade Vasa bara omkring 1 300 meter innan en vindby fick skeppet att kränga. Vatten forsade in genom de öppna kanonportarna.", "emphasis": ["1 300 meter"], "duration": 11 },
+    { "role": "explanation", "template": "breakdown", "text": "Varför kantrade det?", "items": [ { "title": "För topptungt", "detail": "Höga överdäck med tunga kanoner" }, { "title": "För lite barlast", "detail": "För lite vikt långt ner i skrovet" }, { "title": "Varningar ignorerades", "detail": "Ett stabilitetstest gick illa – det seglade ändå" } ], "duration": 12 },
+    { "role": "fact", "template": "reveal", "visual": "ship", "text": "Östersjöns kalla, bräckta vatten fick en oväntad effekt.", "reveal": "Skeppsmasken trivs inte där. I dag är skeppet till cirka 95 procent original.", "duration": 10 },
+    { "role": "context", "template": "timeline", "text": "Tre sekler på havsbotten", "events": [ { "when": "1628", "what": "Sjunker i Stockholms hamn" }, { "when": "1956", "what": "Vraket hittas av Anders Franzén" }, { "when": "1961", "what": "Bärgas från botten" }, { "when": "1990", "what": "Vasamuseet öppnar" } ], "duration": 12 },
+    { "role": "takeaway", "template": "kinetic", "text": "Ett spektakulärt misslyckande blev världens bäst bevarade 1600-talsskepp.", "emphasis": ["bäst bevarade"], "duration": 6 }
+  ],
+  "sources": [
+    { "title": "Vasamuseet", "publisher": "Vasamuseet / Statens maritima och transporthistoriska museer", "url": "https://www.vasamuseet.se/" },
+    { "title": "Regalskeppet Vasa", "publisher": "Wikipedia", "url": "https://sv.wikipedia.org/wiki/Regalskeppet_Vasa" }
+  ],
+  "tags": ["sweden", "ships", "engineering", "failure", "archaeology"]
+}

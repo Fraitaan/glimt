@@ -1,0 +1,22 @@
+{
+  "id": "ikea-effect",
+  "title": "Why the shelf you built feels special",
+  "category": "business",
+  "language": "en",
+  "summary": "The IKEA effect: people value things more when they have put effort into making them — but only when the effort ends in success.",
+  "evidence": "supported",
+  "evidenceNote": "Based on a small number of lab experiments, so the exact size of the effect is uncertain.",
+  "scenes": [
+    { "role": "hook", "template": "kinetic", "text": "Why does the wobbly shelf you built yourself feel so special?", "emphasis": ["yourself"], "duration": 6 },
+    { "role": "explanation", "template": "illustration", "visual": "hammer", "text": "Researchers call it the IKEA effect: we value things more when we've put our own effort into making them.", "emphasis": ["IKEA effect"], "duration": 9 },
+    { "role": "fact", "template": "breakdown", "text": "In experiments, people:", "items": [ { "title": "Built IKEA boxes", "detail": "and would pay more for them than for pre-built ones" }, { "title": "Folded origami", "detail": "and valued it close to an expert's work" }, { "title": "Didn't finish", "detail": "and the effect disappeared" } ], "duration": 13 },
+    { "role": "insight", "template": "kinetic", "text": "Effort creates attachment — but only when it leads to something that works.", "emphasis": ["leads to something that works"], "duration": 7 },
+    { "role": "example", "template": "comparison", "text": "Two sides of the same effect.", "left": { "label": "Use it", "text": "Let people build part of something to value it" }, "right": { "label": "Watch out", "text": "You may overrate your own ideas and projects" }, "duration": 9 },
+    { "role": "takeaway", "template": "kinetic", "text": "Love what you build — but judge it with fresh eyes.", "emphasis": ["fresh eyes"], "duration": 5 }
+  ],
+  "sources": [
+    { "title": "The IKEA effect: When labor leads to love", "publisher": "Journal of Consumer Psychology (Norton, Mochon & Ariely)", "year": 2012, "url": "https://doi.org/10.1016/j.jcps.2011.08.002" },
+    { "title": "IKEA effect", "publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/IKEA_effect" }
+  ],
+  "tags": ["bias", "value", "effort", "sweden", "product"]
+}

@@ -1,0 +1,22 @@
+{
+  "id": "octopus-minds",
+  "title": "Three hearts, blue blood, thinking arms",
+  "category": "curiosities",
+  "language": "en",
+  "summary": "Octopuses have three hearts, copper-based blue blood and around 500 million neurons — about two-thirds of them in their arms, whose suckers can taste by touch.",
+  "evidence": "established",
+  "scenes": [
+    { "role": "hook", "template": "kinetic", "text": "Three hearts. Blue blood. Arms that partly think for themselves.", "emphasis": ["Three hearts", "Blue blood"], "duration": 6 },
+    { "role": "context", "template": "illustration", "visual": "octopus", "text": "Octopuses are mollusks — relatives of snails and clams — yet among the most intelligent invertebrates known.", "emphasis": ["mollusks"], "duration": 9 },
+    { "role": "explanation", "template": "breakdown", "text": "Their bodies are wonderfully strange.", "items": [ { "title": "Three hearts", "detail": "Two pump blood through the gills, one to the body" }, { "title": "Blue blood", "detail": "Copper-based hemocyanin carries oxygen" }, { "title": "Master camouflage", "detail": "Even though they're thought to be colorblind" } ], "duration": 13 },
+    { "role": "fact", "template": "stat", "value": 500, "prefix": "~", "suffix": " million", "text": "An octopus has around 500 million neurons — about two-thirds of them in its arms.", "emphasis": ["two-thirds of them in its arms"], "duration": 8 },
+    { "role": "fact", "template": "reveal", "visual": "octopus", "text": "Each sucker is covered in chemical receptors.", "reveal": "Octopuses taste what they touch.", "duration": 7 },
+    { "role": "takeaway", "template": "kinetic", "text": "Intelligence evolved more than once — and octopuses took a completely different path.", "emphasis": ["more than once"], "duration": 7 }
+  ],
+  "sources": [
+    { "title": "An embodied view of octopus neurobiology", "publisher": "Current Biology (Hochner)", "year": 2012, "url": "https://doi.org/10.1016/j.cub.2012.09.001" },
+    { "title": "Molecular basis of chemotactile sensation in octopus", "publisher": "Cell (van Giesen et al.)", "year": 2020, "url": "https://doi.org/10.1016/j.cell.2020.09.008" },
+    { "title": "Octopus", "publisher": "Encyclopaedia Britannica", "url": "https://www.britannica.com/animal/octopus-mollusk" }
+  ],
+  "tags": ["animals", "intelligence", "ocean", "evolution"]
+}

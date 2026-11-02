@@ -1,0 +1,79 @@
+# Weekly: takes topics from content/topics.txt, fetches source material
+# (Wikipedia, Europe PMC), has a free AI model write explainers from it,
+# validates everything and opens a pull request for you to review.
+# Merging the PR publishes the new explainers (via deploy.yml).
+#
+# One-time setup (see README → "Automated content"):
+#   1. Secret  AI_API_KEY   – e.g. a free Gemini API key from Google AI Studio
+#   2. Settings → Actions → General → Workflow permissions:
+#      tick "Allow GitHub Actions to create and approve pull requests"
+#   Optional variables: AI_MODEL, AI_BASE_URL (to use another OpenAI-compatible provider)
+name: Generate new explainers
+
+on:
+  schedule:
+    - cron: '0 4 * * 1' # Mondays 04:00 UTC
+  workflow_dispatch:
+    inputs:
+      count:
+        description: How many topics to take from content/topics.txt
+        default: '3'
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: generate-content
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+
+      - name: Check API key
+        env:
+          AI_API_KEY: ${{ secrets.AI_API_KEY }}
+        run: |
+          if [ -z "$AI_API_KEY" ]; then
+            echo "::error::Add a repository secret named AI_API_KEY (e.g. a free Gemini key from https://aistudio.google.com/apikey)"
+            exit 1
+          fi
+
+      - name: Generate drafts from fetched sources
+        env:
+          AI_PROVIDER: openai
+          OPENAI_BASE_URL: ${{ vars.AI_BASE_URL || 'https://generativelanguage.googleapis.com/v1beta/openai' }}
+          OPENAI_MODEL: ${{ vars.AI_MODEL || 'gemini-3.8-flash' }}
+          OPENAI_API_KEY: ${{ secrets.AI_API_KEY }}
+          RESEARCH_CONTACT: ${{ github.server_url }}/${{ github.repository }}
+        run: npm run generate -- --from-queue "${{ inputs.count || '3' }}" --report "$RUNNER_TEMP/report.md"
+
+      - name: Move valid drafts into the library
+        run: npm run publish-drafts
+
+      - name: Make sure the site still builds
+        run: npm run build
+
+      - name: Prepare pull request
+        id: meta
+        run: |
+          echo "date=$(date -u +%F)" >> "$GITHUB_OUTPUT"
+          [ -f "$RUNNER_TEMP/report.md" ] || echo "No new explainers this time." > "$RUNNER_TEMP/report.md"
+
+      - uses: peter-evans/create-pull-request@v7
+        with:
+          branch: content/auto-${{ steps.meta.outputs.date }}
+          delete-branch: true
+          add-paths: content/**
+          commit-message: 'content: new explainers ${{ steps.meta.outputs.date }}'
+          title: 'New explainers — ${{ steps.meta.outputs.date }}'
+          body-path: ${{ runner.temp }}/report.md

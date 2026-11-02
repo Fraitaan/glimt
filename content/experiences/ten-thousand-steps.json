@@ -1,0 +1,22 @@
+{
+  "id": "ten-thousand-steps",
+  "title": "Where 10,000 steps really comes from",
+  "category": "health",
+  "language": "en",
+  "summary": "The 10,000-step goal traces back to a 1960s Japanese pedometer. Large studies suggest health benefits level off around 6,000–8,000 steps for older adults and 8,000–10,000 for younger adults.",
+  "evidence": "supported",
+  "evidenceNote": "The step-count findings come from observational studies, which show associations rather than proof of cause. The marketing origin of '10,000' is widely reported by researchers.",
+  "scenes": [
+    { "role": "hook", "template": "question", "text": "Where does the 10,000-step goal come from?", "answer": "A 1960s Japanese pedometer called 'manpo-kei' — literally '10,000-step meter'.", "duration": 10 },
+    { "role": "explanation", "template": "kinetic", "text": "The number was catchy. It wasn't based on a study.", "emphasis": ["catchy"], "duration": 5 },
+    { "role": "fact", "template": "stat", "value": 47471, "text": "In 2022, researchers pooled 15 studies covering 47,471 adults to test step counts against risk of death.", "emphasis": ["15 studies"], "duration": 9 },
+    { "role": "explanation", "template": "comparison", "text": "Risk fell as steps rose — then levelled off.", "left": { "label": "Age 60+", "text": "Around 6,000–8,000 steps a day" }, "right": { "label": "Under 60", "text": "Around 8,000–10,000 steps a day" }, "duration": 10 },
+    { "role": "insight", "template": "illustration", "visual": "footsteps", "text": "The biggest gains came for people moving from very few steps to a few more.", "emphasis": ["biggest gains"], "duration": 7 },
+    { "role": "takeaway", "template": "kinetic", "text": "Forget the magic number. Aim for a little more than yesterday.", "emphasis": ["a little more"], "duration": 6 }
+  ],
+  "sources": [
+    { "title": "Daily steps and all-cause mortality: a meta-analysis of 15 international cohorts", "publisher": "The Lancet Public Health (Paluch et al.)", "year": 2022, "url": "https://doi.org/10.1016/S2468-2667(21)00302-9" },
+    { "title": "How many steps/day are enough? Preliminary pedometer indices for public health", "publisher": "Sports Medicine (Tudor-Locke & Bassett)", "year": 2004, "url": "https://doi.org/10.2165/00007256-200434010-00001" }
+  ],
+  "tags": ["exercise", "walking", "myths", "longevity"]
+}

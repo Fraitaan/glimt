@@ -1,0 +1,21 @@
+{
+  "id": "vasa-warship",
+  "title": "The warship that sank on day one",
+  "category": "history",
+  "language": "en",
+  "summary": "In 1628 Sweden's new warship Vasa capsized minutes into its maiden voyage. The Baltic's brackish water preserved it so well that today the ship is about 95% original.",
+  "evidence": "historical",
+  "scenes": [
+    { "role": "hook", "template": "kinetic", "text": "Sweden's mightiest warship sank on its very first voyage.", "emphasis": ["first voyage"], "duration": 6 },
+    { "role": "context", "template": "illustration", "visual": "ship", "text": "On 10 August 1628, the Vasa sailed only about 1,300 metres before a gust made it heel over. Water poured in through the open gunports.", "emphasis": ["1,300 metres"], "duration": 11 },
+    { "role": "explanation", "template": "breakdown", "text": "Why did it capsize?", "items": [ { "title": "Top-heavy", "detail": "Tall upper decks loaded with heavy guns" }, { "title": "Too little ballast", "detail": "Not enough weight low in the hull" }, { "title": "Warnings ignored", "detail": "A stability test went badly — it sailed anyway" } ], "duration": 12 },
+    { "role": "fact", "template": "reveal", "visual": "ship", "text": "The cold, brackish Baltic water had a surprising effect.", "reveal": "Shipworms couldn't thrive there. Today the ship is about 95% original.", "duration": 10 },
+    { "role": "context", "template": "timeline", "text": "Three centuries on the seabed", "events": [ { "when": "1628", "what": "Sinks in Stockholm harbour" }, { "when": "1956", "what": "Wreck located by Anders Franzén" }, { "when": "1961", "what": "Raised from the seabed" }, { "when": "1990", "what": "The Vasa Museum opens" } ], "duration": 12 },
+    { "role": "takeaway", "template": "kinetic", "text": "A spectacular failure became the world's best-preserved 17th-century ship.", "emphasis": ["best-preserved"], "duration": 6 }
+  ],
+  "sources": [
+    { "title": "The Vasa Museum", "publisher": "Vasamuseet / Swedish National Maritime and Transport Museums", "url": "https://www.vasamuseet.se/en" },
+    { "title": "Vasa (ship)", "publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Vasa_(ship)" }
+  ],
+  "tags": ["sweden", "ships", "engineering", "failure", "archaeology"]
+}

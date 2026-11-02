@@ -1,0 +1,22 @@
+{
+  "id": "rule-of-72",
+  "title": "The rule of 72",
+  "category": "money",
+  "language": "en",
+  "summary": "Divide 72 by a yearly growth rate to estimate how many years it takes to double. It works for savings, inflation and debt alike.",
+  "evidence": "established",
+  "evidenceNote": "The rule of 72 is a mental-math approximation that works best for rates between roughly 4% and 12%. Investment returns are never guaranteed — this is an explanation, not financial advice.",
+  "scenes": [
+    { "role": "hook", "template": "kinetic", "text": "There's a two-second trick for how fast money grows.", "emphasis": ["two-second trick"], "duration": 5 },
+    { "role": "explanation", "template": "kinetic", "text": "Divide 72 by the yearly growth rate. That's roughly how many years it takes to double.", "emphasis": ["72", "double"], "duration": 8 },
+    { "role": "example", "template": "stat", "value": 10, "prefix": "~", "suffix": " years", "text": "At 7% a year, 72 ÷ 7 ≈ 10. The money doubles in about a decade.", "emphasis": ["about a decade"], "duration": 8 },
+    { "role": "explanation", "template": "illustration", "visual": "growth", "text": "It's because growth compounds: each year's gains start earning gains of their own.", "emphasis": ["compounds"], "duration": 8 },
+    { "role": "insight", "template": "comparison", "text": "It works in reverse too.", "left": { "label": "2% inflation", "text": "Prices double in about 36 years" }, "right": { "label": "20% card interest", "text": "Unpaid debt doubles in under 4 years" }, "duration": 10 },
+    { "role": "takeaway", "template": "kinetic", "text": "Time is the most powerful ingredient — for savings and for debt.", "emphasis": ["Time"], "duration": 6 }
+  ],
+  "sources": [
+    { "title": "Compound Interest Calculator", "publisher": "Investor.gov (U.S. Securities and Exchange Commission)", "url": "https://www.investor.gov/financial-tools-calculators/calculators/compound-interest-calculator" },
+    { "title": "Rule of 72", "publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Rule_of_72" }
+  ],
+  "tags": ["compounding", "investing", "inflation", "debt", "math"]
+}

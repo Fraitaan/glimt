@@ -1,0 +1,22 @@
+{
+  "id": "cleopatra-and-the-moon",
+  "title": "Cleopatra lived closer to the Moon landing than to the pyramids",
+  "category": "history",
+  "language": "en",
+  "summary": "The Great Pyramid was already about 2,500 years old when Cleopatra was born — more time than separates her from Apollo 11. 'Ancient Egypt' spans roughly 3,000 years.",
+  "evidence": "historical",
+  "evidenceNote": "Dates for the Great Pyramid are approximate (around 2600–2500 BCE), but the comparison holds across the whole range.",
+  "scenes": [
+    { "role": "hook", "template": "question", "text": "Who lived closer in time to the Moon landing: Cleopatra, or the builders of the Great Pyramid?", "answer": "Cleopatra — by several centuries.", "duration": 11 },
+    { "role": "explanation", "template": "timeline", "text": "Put them on one line", "events": [ { "when": "c. 2560 BCE", "what": "Great Pyramid of Giza is completed" }, { "when": "69 BCE", "what": "Cleopatra is born" }, { "when": "1969 CE", "what": "Apollo 11 lands on the Moon" } ], "duration": 10 },
+    { "role": "fact", "template": "comparison", "text": "Count the gaps.", "left": { "label": "Pyramid → Cleopatra", "text": "About 2,500 years" }, "right": { "label": "Cleopatra → Moon", "text": "About 2,040 years" }, "duration": 8 },
+    { "role": "insight", "template": "illustration", "visual": "pyramid", "text": "To Cleopatra, the pyramids were already ancient — older to her than she is to us.", "emphasis": ["already ancient"], "duration": 8 },
+    { "role": "takeaway", "template": "kinetic", "text": "'Ancient Egypt' spans about 3,000 years. We squash it into one picture.", "emphasis": ["3,000 years"], "duration": 7 }
+  ],
+  "sources": [
+    { "title": "Pyramids of Giza", "publisher": "Encyclopaedia Britannica", "url": "https://www.britannica.com/topic/Pyramids-of-Giza" },
+    { "title": "Cleopatra", "publisher": "Encyclopaedia Britannica", "url": "https://www.britannica.com/biography/Cleopatra-queen-of-Egypt" },
+    { "title": "Apollo 11", "publisher": "NASA", "url": "https://www.nasa.gov/mission/apollo-11/" }
+  ],
+  "tags": ["egypt", "time", "perspective", "space"]
+}

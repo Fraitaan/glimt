@@ -1,0 +1,22 @@
+{
+  "id": "spacing-effect",
+  "title": "Why cramming fails",
+  "category": "productivity",
+  "language": "en",
+  "summary": "Spreading study across several sessions beats one long session for long-term memory. A little forgetting between sessions actually helps.",
+  "evidence": "established",
+  "scenes": [
+    { "role": "hook", "template": "kinetic", "text": "Cramming feels effective. For long-term memory, it mostly isn't.", "emphasis": ["feels"], "duration": 6 },
+    { "role": "context", "template": "timeline", "text": "In the 1880s, Hermann Ebbinghaus memorized nonsense syllables to measure forgetting.", "events": [ { "when": "20 min", "what": "Much is already fading" }, { "when": "1 day", "what": "Most of it is gone" }, { "when": "Later", "what": "Forgetting slows down" } ], "duration": 12 },
+    { "role": "explanation", "template": "illustration", "visual": "calendar", "text": "The spacing effect: the same study time, spread over several sessions, leads to better long-term memory.", "emphasis": ["spacing effect"], "duration": 9 },
+    { "role": "example", "template": "comparison", "text": "Same three hours. Different results.", "left": { "label": "Massed", "text": "Three hours the night before" }, "right": { "label": "Spaced", "text": "One hour on three different days" }, "duration": 9 },
+    { "role": "insight", "template": "kinetic", "text": "Some forgetting between sessions helps: the effort of remembering again makes memories stronger.", "emphasis": ["effort of remembering"], "duration": 8 },
+    { "role": "takeaway", "template": "kinetic", "text": "Study a little. Forget a little. Come back.", "emphasis": ["Come back"], "duration": 5 }
+  ],
+  "sources": [
+    { "title": "Distributed practice in verbal recall tasks: a review and quantitative synthesis", "publisher": "Psychological Bulletin (Cepeda et al.)", "year": 2006, "url": "https://doi.org/10.1037/0033-2909.132.3.354" },
+    { "title": "Improving Students' Learning With Effective Learning Techniques", "publisher": "Psychological Science in the Public Interest (Dunlosky et al.)", "year": 2013, "url": "https://doi.org/10.1177/1529100612453266" },
+    { "title": "Memory: A Contribution to Experimental Psychology (Ebbinghaus, 1885)", "publisher": "Classics in the History of Psychology, York University", "url": "https://psychclassics.yorku.ca/Ebbinghaus/index.htm" }
+  ],
+  "tags": ["learning", "memory", "studying", "habits"]
+}

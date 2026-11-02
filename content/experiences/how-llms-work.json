@@ -1,0 +1,22 @@
+{
+  "id": "how-llms-work",
+  "title": "A chatbot predicts, it doesn't look up",
+  "category": "ai",
+  "language": "en",
+  "summary": "Large language models are trained to predict the next token of text. Chained thousands of times, that produces fluent answers — which is also why they can be confidently wrong.",
+  "evidence": "simplified",
+  "evidenceNote": "A simplified picture. Modern assistants are also tuned with human feedback and may use tools such as web search, but next-token prediction is the core mechanism.",
+  "scenes": [
+    { "role": "hook", "template": "kinetic", "text": "A chatbot doesn't look up answers. It predicts them.", "emphasis": ["predicts"], "duration": 5 },
+    { "role": "explanation", "template": "illustration", "visual": "chip", "text": "Large language models are trained on huge amounts of text to predict the next small chunk of text — a 'token'.", "emphasis": ["token"], "duration": 9 },
+    { "role": "example", "template": "question", "text": "\"The capital of Sweden is…\"", "answer": "\"Stockholm\" is by far the most likely next token — so the model writes it.", "duration": 9 },
+    { "role": "explanation", "template": "breakdown", "text": "Repeat that step thousands of times and you get an essay.", "items": [ { "title": "Tokens", "detail": "Words or pieces of words" }, { "title": "Probabilities", "detail": "Each next token is picked from likely options" }, { "title": "Training", "detail": "Billions of examples tune the model's parameters" } ], "duration": 12 },
+    { "role": "insight", "template": "reveal", "text": "This is also why chatbots can be confidently wrong.", "reveal": "A fluent, plausible answer isn't the same as a checked fact.", "duration": 8 },
+    { "role": "takeaway", "template": "kinetic", "text": "Use AI to think and draft. Verify anything that matters.", "emphasis": ["Verify"], "duration": 5 }
+  ],
+  "sources": [
+    { "title": "Attention Is All You Need", "publisher": "arXiv (Vaswani et al.)", "year": 2017, "url": "https://arxiv.org/abs/1706.03762" },
+    { "title": "Language Models are Few-Shot Learners", "publisher": "arXiv (Brown et al.)", "year": 2020, "url": "https://arxiv.org/abs/2005.14165" }
+  ],
+  "tags": ["language models", "machine learning", "chatbots", "critical thinking"]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "stoic-dichotomy-of-control-sv",
+  "translationOf": "stoic-dichotomy-of-control",
+  "title": "Stoikernas knep för ett lugnare sinne",
+  "category": "philosophy",
+  "language": "sv",
+  "summary": "Epiktetos lärde att vissa saker står i vår makt – våra omdömen och handlingar – och att det mesta inte gör det. Att lägga energin på den första högen är kärnan i stoiskt lugn.",
+  "evidence": "concept",
+  "evidenceNote": "Det här är en filosofisk idé, inte ett vetenskapligt resultat. Moderna kognitiva terapier bygger på liknande tankar, men stoicismen i sig är ett sätt att se på livet, inte en bevisad behandling.",
+  "scenes": [
+    { "role": "hook", "template": "kinetic", "text": "”Somt står i vår makt, annat inte.” – Epiktetos", "emphasis": ["i vår makt"], "duration": 6 },
+    { "role": "context", "template": "illustration", "visual": "compass", "text": "Epiktetos föddes som slav omkring år 50 och blev en av de mest inflytelserika stoiska lärarna.", "emphasis": ["föddes som slav"], "duration": 9 },
+    { "role": "explanation", "template": "comparison", "text": "Han delade upp livet i två högar.", "left": { "label": "Din sak", "text": "Dina omdömen, avsikter och handlingar" }, "right": { "label": "Inte din sak", "text": "Andra människor, ditt rykte, utfall" }, "duration": 10 },
+    { "role": "example", "template": "kinetic", "text": "Ett försenat tåg står inte i din makt. Hur du använder väntan gör det.", "emphasis": ["Hur du använder väntan"], "duration": 7 },
+    { "role": "insight", "template": "question", "text": "Betyder det att du slutar bry dig om resultatet?", "answer": "Nej. Stoikerna jämförde med en bågskytt: sikta så väl du kan, och acceptera sedan var pilen landar.", "duration": 12 },
+    { "role": "takeaway", "template": "kinetic", "text": "Lägg energin där den faktiskt gör nytta.", "emphasis": ["faktiskt gör nytta"], "duration": 5 }
+  ],
+  "sources": [
+    { "title": "Epictetus", "publisher": "Stanford Encyclopedia of Philosophy", "url": "https://plato.stanford.edu/entries/epictetus/" },
+    { "title": "The Enchiridion (övers. Elizabeth Carter)", "publisher": "The Internet Classics Archive, MIT", "url": "http://classics.mit.edu/Epictetus/epicench.html" }
+  ],
+  "tags": ["stoicism", "stress", "mindset", "ancient"]
+}

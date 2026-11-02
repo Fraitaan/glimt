@@ -1,0 +1,21 @@
+{
+  "id": "testing-effect",
+  "title": "Rereading feels like learning. Testing is.",
+  "category": "productivity",
+  "language": "en",
+  "summary": "Trying to recall information strengthens memory far more than rereading it. In a classic study, students who practised recall remembered much more a week later.",
+  "evidence": "established",
+  "scenes": [
+    { "role": "hook", "template": "kinetic", "text": "Rereading your notes feels productive. Testing yourself actually is.", "emphasis": ["Testing yourself"], "duration": 6 },
+    { "role": "context", "template": "comparison", "text": "In a 2006 experiment, students read a short text, then either:", "left": { "label": "Reread it", "text": "Studied the same text again" }, "right": { "label": "Recalled it", "text": "Wrote down everything they remembered" }, "duration": 10 },
+    { "role": "fact", "template": "reveal", "text": "Tested five minutes later, rereading looked slightly better.", "reveal": "But one week later, the recall group remembered much more.", "duration": 9 },
+    { "role": "fact", "template": "stat", "value": 56, "suffix": "%", "text": "After a week, the self-testers recalled 56% of the material — the rereaders 42%.", "emphasis": ["56%"], "duration": 8 },
+    { "role": "explanation", "template": "breakdown", "text": "Easy ways to use it:", "items": [ { "title": "Flashcards", "detail": "Answer before you flip" }, { "title": "Blank page", "detail": "Write what you remember, then check" }, { "title": "Teach it", "detail": "Explain it out loud to someone" } ], "duration": 10 },
+    { "role": "takeaway", "template": "kinetic", "text": "Close the book and try to remember. That's the learning.", "emphasis": ["try to remember"], "duration": 5 }
+  ],
+  "sources": [
+    { "title": "Test-Enhanced Learning: Taking Memory Tests Improves Long-Term Retention", "publisher": "Psychological Science (Roediger & Karpicke)", "year": 2006, "url": "https://doi.org/10.1111/j.1467-9280.2006.01693.x" },
+    { "title": "Improving Students' Learning With Effective Learning Techniques", "publisher": "Psychological Science in the Public Interest (Dunlosky et al.)", "year": 2013, "url": "https://doi.org/10.1177/1529100612453266" }
+  ],
+  "tags": ["learning", "memory", "studying", "retrieval"]
+}

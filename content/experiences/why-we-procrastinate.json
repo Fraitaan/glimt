@@ -1,0 +1,22 @@
+{
+  "id": "why-we-procrastinate",
+  "title": "Why your brain procrastinates",
+  "category": "psychology",
+  "language": "en",
+  "summary": "Procrastination is often less about laziness and more about mood repair: we dodge tasks that feel bad right now, even when it costs us later.",
+  "evidence": "supported",
+  "evidenceNote": "The emotion-regulation view of procrastination is well supported, but procrastination has several causes. 'Make the first step tiny' is a practical strategy rather than a single proven cure.",
+  "scenes": [
+    { "role": "hook", "template": "kinetic", "text": "Procrastination isn't simply laziness.", "emphasis": ["laziness"], "duration": 5 },
+    { "role": "explanation", "template": "illustration", "visual": "brain", "text": "Research suggests it's often about mood: we avoid tasks that feel boring, confusing or threatening right now.", "emphasis": ["mood"], "duration": 9 },
+    { "role": "explanation", "template": "comparison", "text": "Your brain weighs two very different rewards.", "left": { "label": "Now", "text": "Instant relief: a scroll, a snack, a tidy desk" }, "right": { "label": "Later", "text": "A finished task, weeks away and abstract" }, "duration": 10 },
+    { "role": "example", "template": "illustration", "visual": "phone", "text": "That's why checking your phone feels easier than opening the document you've been dreading.", "emphasis": ["easier"], "duration": 8 },
+    { "role": "insight", "template": "illustration", "visual": "stairs", "text": "Shrink the first step until it barely feels like work: open the file, write one sentence.", "emphasis": ["first step"], "duration": 9 },
+    { "role": "takeaway", "template": "kinetic", "text": "Don't aim to finish. Aim to start.", "emphasis": ["start"], "duration": 5 }
+  ],
+  "sources": [
+    { "title": "Procrastination and the priority of short-term mood regulation", "publisher": "Social and Personality Psychology Compass (Sirois & Pychyl)", "year": 2013, "url": "https://doi.org/10.1111/spc3.12011" },
+    { "title": "The nature of procrastination: a meta-analytic and theoretical review", "publisher": "Psychological Bulletin (Steel)", "year": 2007, "url": "https://doi.org/10.1037/0033-2909.133.1.65" }
+  ],
+  "tags": ["behavior", "emotions", "motivation", "habits"]
+}

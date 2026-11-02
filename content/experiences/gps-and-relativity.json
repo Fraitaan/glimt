@@ -1,0 +1,21 @@
+{
+  "id": "gps-and-relativity",
+  "title": "Your map app relies on Einstein",
+  "category": "science",
+  "language": "en",
+  "summary": "Clocks on GPS satellites run about 38 microseconds a day fast because of relativity. Without correcting for it, positions would drift by around 10 km per day.",
+  "evidence": "established",
+  "scenes": [
+    { "role": "hook", "template": "kinetic", "text": "Your phone's map relies on Einstein.", "emphasis": ["Einstein"], "duration": 5 },
+    { "role": "context", "template": "illustration", "visual": "satellite", "text": "GPS satellites carry atomic clocks. Your phone works out where it is from how long their signals take to arrive.", "emphasis": ["atomic clocks"], "duration": 10 },
+    { "role": "explanation", "template": "comparison", "text": "Relativity pushes those clocks in two directions.", "left": { "label": "Weaker gravity", "text": "Clocks high up tick faster: about +45 μs a day" }, "right": { "label": "High speed", "text": "Moving clocks tick slower: about −7 μs a day" }, "duration": 11 },
+    { "role": "fact", "template": "stat", "value": 38, "suffix": " μs", "text": "Net result: satellite clocks gain about 38 microseconds every day.", "emphasis": ["38 microseconds"], "duration": 7 },
+    { "role": "insight", "template": "reveal", "text": "Tiny? Radio signals travel about 300 metres in one microsecond.", "reveal": "Left uncorrected, positions would drift by roughly 10 km per day.", "duration": 10 },
+    { "role": "takeaway", "template": "kinetic", "text": "So the satellite clocks are deliberately set to tick slightly slow before launch.", "emphasis": ["deliberately"], "duration": 7 }
+  ],
+  "sources": [
+    { "title": "Relativity in the Global Positioning System", "publisher": "Living Reviews in Relativity (Ashby)", "year": 2003, "url": "https://doi.org/10.12942/lrr-2003-1" },
+    { "title": "Real-World Relativity: The GPS Navigation System", "publisher": "The Ohio State University (Pogge)", "url": "https://www.astronomy.ohio-state.edu/pogge.1/Ast162/Unit5/gps.html" }
+  ],
+  "tags": ["physics", "relativity", "technology", "space"]
+}

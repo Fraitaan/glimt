@@ -1,0 +1,21 @@
+{
+  "id": "dunning-kruger",
+  "title": "The Dunning–Kruger effect is messier than you think",
+  "category": "psychology",
+  "language": "en",
+  "summary": "A famous 1999 study found low performers overestimated their skill. Later work shows part of that pattern can come from statistics alone — the clearer lesson is that most of us judge ourselves poorly.",
+  "evidence": "debated",
+  "evidenceNote": "The original pattern shows up reliably in data, but researchers disagree about how much reflects a real psychological effect versus statistical artefacts such as regression to the mean.",
+  "scenes": [
+    { "role": "hook", "template": "kinetic", "text": "\"The less people know, the more confident they are.\" You've heard it. Is it true?", "emphasis": ["Is it true?"], "duration": 7 },
+    { "role": "explanation", "template": "stat", "value": 62, "suffix": "nd", "text": "In the 1999 study, people who scored around the 12th percentile guessed they were near the 62nd.", "emphasis": ["12th", "62nd"], "duration": 9 },
+    { "role": "explanation", "template": "comparison", "text": "But nobody judged themselves accurately.", "left": { "label": "Low scorers", "text": "Overestimated their rank by a lot" }, "right": { "label": "High scorers", "text": "Slightly underestimated theirs" }, "duration": 9 },
+    { "role": "insight", "template": "question", "text": "So is it a real effect of ignorance?", "answer": "It's debated. Similar patterns can appear from statistics alone, such as regression to the mean.", "duration": 12 },
+    { "role": "takeaway", "template": "kinetic", "text": "The safest lesson: we all misjudge our own skill. Seek real feedback.", "emphasis": ["real feedback"], "duration": 7 }
+  ],
+  "sources": [
+    { "title": "Unskilled and unaware of it: how difficulties in recognizing one's own incompetence lead to inflated self-assessments", "publisher": "Journal of Personality and Social Psychology (Kruger & Dunning)", "year": 1999, "url": "https://doi.org/10.1037/0022-3514.77.6.1121" },
+    { "title": "The Dunning-Kruger effect is (mostly) a statistical artefact", "publisher": "Intelligence (Gignac & Zajenkowski)", "year": 2020, "url": "https://doi.org/10.1016/j.intell.2020.101449" }
+  ],
+  "tags": ["bias", "self-knowledge", "confidence", "statistics"]
+}

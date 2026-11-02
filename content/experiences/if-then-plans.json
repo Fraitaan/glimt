@@ -1,0 +1,22 @@
+{
+  "id": "if-then-plans",
+  "title": "The two-word trick for following through",
+  "category": "productivity",
+  "language": "en",
+  "summary": "Implementation intentions — 'if X happens, then I'll do Y' — link a goal to a specific moment. A review of 94 studies found they substantially help people act on their goals.",
+  "evidence": "supported",
+  "evidenceNote": "The meta-analytic evidence is strong, but effect sizes in individual studies vary and some may be inflated by publication bias.",
+  "scenes": [
+    { "role": "hook", "template": "kinetic", "text": "\"I'll exercise more\" rarely works. Try \"if–then\" instead.", "emphasis": ["if–then"], "duration": 6 },
+    { "role": "explanation", "template": "kinetic", "text": "An implementation intention links a moment to an action: \"If it's Monday at 7, then I put on my running shoes.\"", "emphasis": ["a moment", "an action"], "duration": 9 },
+    { "role": "example", "template": "comparison", "text": "Turn a wish into a plan.", "left": { "label": "Goal", "text": "I want to read more" }, "right": { "label": "If–then plan", "text": "When I get into bed, I'll read one page" }, "duration": 8 },
+    { "role": "fact", "template": "stat", "value": 94, "suffix": " studies", "text": "A review of 94 studies found if–then plans had a medium-to-large effect on reaching goals.", "emphasis": ["medium-to-large"], "duration": 8 },
+    { "role": "insight", "template": "illustration", "visual": "target", "text": "It works because the decision is made in advance. When the moment arrives, the cue triggers the action.", "emphasis": ["made in advance"], "duration": 9 },
+    { "role": "takeaway", "template": "kinetic", "text": "Pick one goal. Finish this sentence: \"When ___, I will ___.\"", "emphasis": ["When ___, I will ___."], "duration": 6 }
+  ],
+  "sources": [
+    { "title": "Implementation Intentions and Goal Achievement: A Meta-analysis of Effects and Processes", "publisher": "Advances in Experimental Social Psychology (Gollwitzer & Sheeran)", "year": 2006, "url": "https://doi.org/10.1016/S0065-2601(06)38002-1" },
+    { "title": "Implementation intentions: Strong effects of simple plans", "publisher": "American Psychologist (Gollwitzer)", "year": 1999, "url": "https://doi.org/10.1037/0003-066X.54.7.493" }
+  ],
+  "tags": ["habits", "goals", "motivation", "planning"]
+}

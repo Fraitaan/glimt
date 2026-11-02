@@ -1,0 +1,21 @@
+{
+  "id": "why-the-sky-is-blue",
+  "title": "Why is the sky blue — and not violet?",
+  "category": "science",
+  "language": "en",
+  "summary": "Air molecules scatter short-wavelength light far more than long-wavelength light. Blue wins over violet because sunlight has less violet and our eyes are less sensitive to it.",
+  "evidence": "established",
+  "scenes": [
+    { "role": "hook", "template": "kinetic", "text": "Sunlight is white. So why is the sky blue?", "emphasis": ["blue"], "duration": 5 },
+    { "role": "explanation", "template": "illustration", "visual": "sun", "text": "Sunlight contains every color. As it passes through air, tiny gas molecules scatter some of it in all directions.", "emphasis": ["scatter"], "duration": 9 },
+    { "role": "explanation", "template": "stat", "value": 6, "prefix": "~", "suffix": "×", "text": "Blue light (around 450 nm) is scattered about six times more strongly than red light (around 700 nm).", "emphasis": ["six times"], "duration": 9 },
+    { "role": "fact", "template": "question", "text": "Violet scatters even more. So why isn't the sky violet?", "answer": "Sunlight contains less violet, some is absorbed high up, and our eyes are less sensitive to it.", "duration": 12 },
+    { "role": "insight", "template": "reveal", "visual": "sun", "text": "At sunset, light passes through much more air to reach you.", "reveal": "Most of the blue is scattered away first, leaving reds and oranges.", "duration": 10 },
+    { "role": "takeaway", "template": "kinetic", "text": "A blue sky is sunlight bouncing off the air itself.", "emphasis": ["the air itself"], "duration": 5 }
+  ],
+  "sources": [
+    { "title": "Why is the sky blue?", "publisher": "NASA Space Place", "url": "https://spaceplace.nasa.gov/blue-sky/en/" },
+    { "title": "Rayleigh scattering", "publisher": "Encyclopaedia Britannica", "url": "https://www.britannica.com/science/Rayleigh-scattering" }
+  ],
+  "tags": ["light", "physics", "atmosphere", "color"]
+}

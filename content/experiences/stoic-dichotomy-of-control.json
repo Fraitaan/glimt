@@ -1,0 +1,22 @@
+{
+  "id": "stoic-dichotomy-of-control",
+  "title": "The Stoic trick for a calmer mind",
+  "category": "philosophy",
+  "language": "en",
+  "summary": "Epictetus taught that some things are up to us — our judgments and actions — and most things are not. Putting your energy only into the first pile is the core of Stoic calm.",
+  "evidence": "concept",
+  "evidenceNote": "This is a philosophical idea, not a scientific finding. Modern cognitive therapies draw on similar thinking, but the Stoic framework itself is a way of seeing, not a proven treatment.",
+  "scenes": [
+    { "role": "hook", "template": "kinetic", "text": "\"Some things are in our control and others not.\" — Epictetus", "emphasis": ["in our control"], "duration": 6 },
+    { "role": "context", "template": "illustration", "visual": "compass", "text": "Epictetus was born into slavery around 50 CE and became one of the most influential Stoic teachers.", "emphasis": ["born into slavery"], "duration": 9 },
+    { "role": "explanation", "template": "comparison", "text": "He sorted life into two piles.", "left": { "label": "Up to you", "text": "Your judgments, intentions and actions" }, "right": { "label": "Not up to you", "text": "Other people, your reputation, outcomes" }, "duration": 10 },
+    { "role": "example", "template": "kinetic", "text": "A delayed train isn't up to you. How you spend the wait is.", "emphasis": ["How you spend the wait"], "duration": 6 },
+    { "role": "insight", "template": "question", "text": "Does that mean you stop caring about results?", "answer": "No. The Stoics compared it to an archer: aim as well as you can, then accept where the arrow lands.", "duration": 12 },
+    { "role": "takeaway", "template": "kinetic", "text": "Spend your energy where it actually works.", "emphasis": ["actually works"], "duration": 5 }
+  ],
+  "sources": [
+    { "title": "Epictetus", "publisher": "Stanford Encyclopedia of Philosophy", "url": "https://plato.stanford.edu/entries/epictetus/" },
+    { "title": "The Enchiridion (trans. Elizabeth Carter)", "publisher": "The Internet Classics Archive, MIT", "url": "http://classics.mit.edu/Epictetus/epicench.html" }
+  ],
+  "tags": ["stoicism", "stress", "mindset", "ancient"]
+}

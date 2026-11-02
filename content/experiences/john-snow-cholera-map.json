@@ -1,0 +1,22 @@
+{
+  "id": "john-snow-cholera-map",
+  "title": "The map that traced a killer to a water pump",
+  "category": "history",
+  "language": "en",
+  "summary": "In 1854 physician John Snow linked a London cholera outbreak to one water pump, at a time when most doctors blamed 'bad air'. The popular story leaves out that the outbreak was already fading.",
+  "evidence": "historical",
+  "scenes": [
+    { "role": "hook", "template": "kinetic", "text": "In 1854, a map helped trace a deadly outbreak — and changed medicine.", "emphasis": ["a map"], "duration": 6 },
+    { "role": "context", "template": "illustration", "visual": "pump", "text": "Cholera was killing hundreds in Soho, London. Most doctors blamed 'miasma': bad air.", "emphasis": ["bad air"], "duration": 8 },
+    { "role": "explanation", "template": "breakdown", "text": "Physician John Snow suspected the water.", "items": [ { "title": "Mapped the deaths", "detail": "They clustered around one pump on Broad Street" }, { "title": "Checked the exceptions", "detail": "Nearby brewery workers, who drank beer, were largely spared" }, { "title": "Acted", "detail": "Persuaded officials to remove the pump handle" } ], "duration": 13 },
+    { "role": "fact", "template": "reveal", "text": "Here's the part the legend often skips.", "reveal": "The outbreak was already declining when the handle came off.", "duration": 8 },
+    { "role": "insight", "template": "kinetic", "text": "His real legacy: using careful data to find a cause — a foundation of modern epidemiology.", "emphasis": ["careful data"], "duration": 8 },
+    { "role": "takeaway", "template": "kinetic", "text": "Evidence can beat even the most widely held assumption.", "emphasis": ["Evidence"], "duration": 5 }
+  ],
+  "sources": [
+    { "title": "On the Mode of Communication of Cholera (2nd ed.)", "publisher": "John Snow, via Internet Archive", "year": 1855, "url": "https://archive.org/details/b28985266" },
+    { "title": "John Snow", "publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/John_Snow" },
+    { "title": "1854 Broad Street cholera outbreak", "publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/1854_Broad_Street_cholera_outbreak" }
+  ],
+  "tags": ["medicine", "data", "epidemiology", "london"]
+}

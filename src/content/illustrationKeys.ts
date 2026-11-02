@@ -1,0 +1,33 @@
+/** Every illustration available to scenes. The drawings live in src/scenes/illustrations.tsx. */
+export const ILLUSTRATION_KEYS = [
+  'brain',
+  'phone',
+  'stairs',
+  'sun',
+  'satellite',
+  'waterbear',
+  'ship',
+  'pyramid',
+  'pump',
+  'scale',
+  'coins',
+  'growth',
+  'moon',
+  'neurons',
+  'footsteps',
+  'calendar',
+  'target',
+  'cards',
+  'chip',
+  'eye',
+  'plane',
+  'hammer',
+  'octopus',
+  'train',
+  'clock',
+  'lightbulb',
+  'compass',
+  'mountain',
+] as const
+
+export type IllustrationKey = (typeof ILLUSTRATION_KEYS)[number]

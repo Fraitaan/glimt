@@ -1,0 +1,23 @@
+{
+  "id": "gut-nervous-system",
+  "title": "The nervous system in your gut",
+  "category": "health",
+  "language": "en",
+  "summary": "Your digestive tract is lined with the enteric nervous system — over 100 million nerve cells that can run digestion on their own and constantly signal the brain.",
+  "evidence": "established",
+  "evidenceNote": "The enteric nervous system and its independence are well established. Claims about the gut shaping mood are an active research area and often overstated.",
+  "scenes": [
+    { "role": "hook", "template": "kinetic", "text": "You have a nervous system in your gut.", "emphasis": ["in your gut"], "duration": 5 },
+    { "role": "explanation", "template": "illustration", "visual": "neurons", "text": "The enteric nervous system is a mesh of nerve cells lining your digestive tract, from esophagus to rectum.", "emphasis": ["enteric nervous system"], "duration": 9 },
+    { "role": "fact", "template": "stat", "value": 100, "suffix": " million+", "text": "It contains more than 100 million nerve cells — some estimates go much higher.", "emphasis": ["100 million"], "duration": 7 },
+    { "role": "fact", "template": "reveal", "visual": "neurons", "text": "It can coordinate digestion even without instructions from the brain.", "reveal": "That's why it's nicknamed the 'second brain' — though it doesn't think.", "duration": 10 },
+    { "role": "explanation", "template": "comparison", "text": "Gut and brain talk constantly.", "left": { "label": "Brain → gut", "text": "Stress can speed up or slow down digestion" }, "right": { "label": "Gut → brain", "text": "Most vagus nerve fibres carry signals upward" }, "duration": 10 },
+    { "role": "takeaway", "template": "kinetic", "text": "Butterflies in your stomach are a real two-way conversation.", "emphasis": ["two-way conversation"], "duration": 5 }
+  ],
+  "sources": [
+    { "title": "The Brain-Gut Connection", "publisher": "Johns Hopkins Medicine", "url": "https://www.hopkinsmedicine.org/health/wellness-and-prevention/the-brain-gut-connection" },
+    { "title": "The enteric nervous system and neurogastroenterology", "publisher": "Nature Reviews Gastroenterology & Hepatology (Furness)", "year": 2012, "url": "https://doi.org/10.1038/nrgastro.2012.32" },
+    { "title": "Vagus Nerve as Modulator of the Brain–Gut Axis in Psychiatric and Inflammatory Disorders", "publisher": "Frontiers in Psychiatry (Breit et al.)", "year": 2018, "url": "https://doi.org/10.3389/fpsyt.2018.00044" }
+  ],
+  "tags": ["body", "nervous system", "digestion", "brain"]
+}

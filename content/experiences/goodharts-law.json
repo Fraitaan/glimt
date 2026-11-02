@@ -1,0 +1,23 @@
+{
+  "id": "goodharts-law",
+  "title": "When a number becomes the goal",
+  "category": "business",
+  "language": "en",
+  "summary": "Goodhart's law: when a measure becomes a target, it stops being a good measure. People optimize the number instead of what it was meant to show.",
+  "evidence": "concept",
+  "evidenceNote": "Goodhart's law is an observation, not a precise scientific law. The famous 'cobra effect' anecdote is poorly documented; the Hanoi rat bounty of 1902 is better supported by historical research.",
+  "scenes": [
+    { "role": "hook", "template": "kinetic", "text": "When a measure becomes a target, it stops being a good measure.", "emphasis": ["target"], "duration": 6 },
+    { "role": "context", "template": "illustration", "visual": "target", "text": "It's called Goodhart's law, after economist Charles Goodhart. This popular wording comes from anthropologist Marilyn Strathern.", "emphasis": ["Goodhart's law"], "duration": 10 },
+    { "role": "explanation", "template": "breakdown", "text": "Reward a number, and people optimize the number.", "items": [ { "title": "Test scores", "detail": "Teaching to the test can outpace real learning" }, { "title": "Waiting-time targets", "detail": "Invite gaming of when the clock starts" }, { "title": "Lines of code", "detail": "Rewards longer software, not better software" } ], "duration": 12 },
+    { "role": "fact", "template": "reveal", "text": "You may know the 'cobra effect': bounties on cobras supposedly led to cobra farming.", "reveal": "Historians have found little evidence it actually happened.", "duration": 10 },
+    { "role": "example", "template": "reveal", "text": "A documented case: Hanoi, 1902. Officials paid a bounty for every rat tail.", "reveal": "Rats were spotted without tails — released, perhaps, to keep breeding.", "duration": 10 },
+    { "role": "takeaway", "template": "kinetic", "text": "Use several measures — and keep asking what the number is for.", "emphasis": ["what the number is for"], "duration": 6 }
+  ],
+  "sources": [
+    { "title": "'Improving ratings': audit in the British University system", "publisher": "European Review (Strathern)", "year": 1997, "url": "https://doi.org/10.1017/S1062798700002660" },
+    { "title": "Of Rats, Rice, and Race: The Great Hanoi Rat Massacre", "publisher": "French Colonial History (Vann)", "year": 2003, "url": "https://doi.org/10.1353/fch.2003.0027" },
+    { "title": "Goodhart's law", "publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Goodhart%27s_law" }
+  ],
+  "tags": ["metrics", "incentives", "management", "systems"]
+}

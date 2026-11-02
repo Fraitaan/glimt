@@ -1,0 +1,22 @@
+{
+  "id": "survivorship-bias",
+  "title": "Armor the planes where there are no holes",
+  "category": "business",
+  "language": "en",
+  "summary": "Survivorship bias: drawing conclusions only from the cases that made it through. The WWII bomber story is the classic example — and the same trap hides in success stories.",
+  "evidence": "concept",
+  "evidenceNote": "Abraham Wald's WWII analysis is real, but the popular version is simplified: his reports were mathematical estimates, and the well-known 'red dots' plane diagram is a modern illustration.",
+  "scenes": [
+    { "role": "hook", "template": "question", "text": "Bombers return riddled with bullet holes. Where should you add armor?", "answer": "Where there are no holes.", "duration": 9 },
+    { "role": "context", "template": "illustration", "visual": "plane", "text": "In WWII, statistician Abraham Wald studied aircraft damage. The key point: you only see the planes that made it back.", "emphasis": ["made it back"], "duration": 10 },
+    { "role": "explanation", "template": "kinetic", "text": "Holes on returning planes show where a plane can be hit and still survive. The lost planes were hit elsewhere.", "emphasis": ["still survive"], "duration": 9 },
+    { "role": "fact", "template": "reveal", "text": "The popular version is simplified.", "reveal": "Wald's real work was mathematical estimates — the famous diagram came much later.", "duration": 8 },
+    { "role": "example", "template": "comparison", "text": "The same trap appears in business.", "left": { "label": "What you see", "text": "Dropouts who became billionaires" }, "right": { "label": "What you don't", "text": "The many dropouts whose companies failed" }, "duration": 9 },
+    { "role": "takeaway", "template": "kinetic", "text": "Before copying success, ask: who failed doing the exact same thing?", "emphasis": ["who failed"], "duration": 6 }
+  ],
+  "sources": [
+    { "title": "Abraham Wald's Work on Aircraft Survivability", "publisher": "Journal of the American Statistical Association (Mangel & Samaniego)", "year": 1984, "url": "https://doi.org/10.1080/01621459.1984.10478083" },
+    { "title": "Survivorship bias", "publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Survivorship_bias" }
+  ],
+  "tags": ["bias", "statistics", "decisions", "ww2"]
+}

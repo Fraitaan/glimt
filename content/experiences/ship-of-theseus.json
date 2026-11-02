@@ -1,0 +1,21 @@
+{
+  "id": "ship-of-theseus",
+  "title": "Is it still the same ship?",
+  "category": "philosophy",
+  "language": "en",
+  "summary": "If every plank of a ship is replaced over time, is it the same ship? The Ship of Theseus puzzle has no settled answer — and it applies to people too.",
+  "evidence": "concept",
+  "scenes": [
+    { "role": "hook", "template": "question", "text": "Replace every plank of a ship, one by one. Is it still the same ship?", "answer": "Philosophers have argued about this for around 2,000 years.", "duration": 10 },
+    { "role": "context", "template": "illustration", "visual": "ship", "text": "Plutarch wrote that Athenians preserved the hero Theseus's ship, replacing rotting timbers with new ones.", "emphasis": ["replacing rotting timbers"], "duration": 9 },
+    { "role": "fact", "template": "reveal", "text": "Centuries later, Thomas Hobbes added a twist.", "reveal": "What if someone kept the old planks and rebuilt the original? Which ship is the real one?", "duration": 11 },
+    { "role": "explanation", "template": "breakdown", "text": "Some common answers:", "items": [ { "title": "Same material", "detail": "The rebuilt ship is the original" }, { "title": "Continuity", "detail": "The repaired ship, because it changed gradually" }, { "title": "It depends", "detail": "'Same' depends on what we care about" } ], "duration": 12 },
+    { "role": "example", "template": "kinetic", "text": "Many of your body's cells are replaced over the years. Are you still the same person?", "emphasis": ["the same person"], "duration": 7 },
+    { "role": "takeaway", "template": "kinetic", "text": "Identity may be less about parts and more about continuity.", "emphasis": ["continuity"], "duration": 5 }
+  ],
+  "sources": [
+    { "title": "Identity Over Time", "publisher": "Stanford Encyclopedia of Philosophy", "url": "https://plato.stanford.edu/entries/identity-time/" },
+    { "title": "Ship of Theseus", "publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Ship_of_Theseus" }
+  ],
+  "tags": ["identity", "paradox", "ancient", "metaphysics"]
+}

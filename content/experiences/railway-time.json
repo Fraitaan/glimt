@@ -1,0 +1,22 @@
+{
+  "id": "railway-time",
+  "title": "Time zones were invented for trains",
+  "category": "history",
+  "language": "en",
+  "summary": "Before railways, every town kept its own solar time. Train timetables forced countries — Sweden included — to adopt shared standard time in the 1800s.",
+  "evidence": "historical",
+  "scenes": [
+    { "role": "hook", "template": "kinetic", "text": "Time zones were invented for trains.", "emphasis": ["trains"], "duration": 5 },
+    { "role": "context", "template": "illustration", "visual": "clock", "text": "Towns once set clocks by the sun. Local noon in Gothenburg came about 24 minutes after Stockholm's.", "emphasis": ["24 minutes"], "duration": 9 },
+    { "role": "explanation", "template": "illustration", "visual": "train", "text": "Fast railways turned that into chaos. Timetables needed one shared time.", "emphasis": ["one shared time"], "duration": 7 },
+    { "role": "explanation", "template": "timeline", "text": "Standard time spreads", "events": [ { "when": "1847", "what": "British railways move to London time" }, { "when": "1879", "what": "Sweden adopts one national time" }, { "when": "1883", "what": "US and Canadian railroads adopt time zones" }, { "when": "1884", "what": "Greenwich chosen as prime meridian" } ], "duration": 13 },
+    { "role": "fact", "template": "reveal", "text": "In the US, railroads — not the government — set the zones.", "reveal": "Congress didn't make time zones law until 1918.", "duration": 8 },
+    { "role": "takeaway", "template": "kinetic", "text": "Technology doesn't just save time. Sometimes it defines it.", "emphasis": ["defines"], "duration": 5 }
+  ],
+  "sources": [
+    { "title": "Standard time", "publisher": "Encyclopaedia Britannica", "url": "https://www.britannica.com/science/standard-time" },
+    { "title": "Railway time", "publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Railway_time" },
+    { "title": "Time in Sweden", "publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Time_in_Sweden" }
+  ],
+  "tags": ["time", "railways", "technology", "sweden"]
+}

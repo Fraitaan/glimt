@@ -1,0 +1,22 @@
+{
+  "id": "adversarial-examples",
+  "title": "How to make an AI see a gibbon",
+  "category": "ai",
+  "language": "en",
+  "summary": "Adversarial examples are inputs with tiny, carefully computed changes that make AI models confidently wrong — like a panda photo classified as a gibbon with 99.3% confidence.",
+  "evidence": "established",
+  "scenes": [
+    { "role": "hook", "template": "kinetic", "text": "Change an image invisibly — and the AI sees something else.", "emphasis": ["invisibly"], "duration": 6 },
+    { "role": "explanation", "template": "illustration", "visual": "eye", "text": "Image classifiers learn statistical patterns in pixels. They don't see the way we do.", "emphasis": ["patterns in pixels"], "duration": 8 },
+    { "role": "fact", "template": "reveal", "text": "In a famous 2014 example, researchers added carefully computed noise to a photo of a panda.", "reveal": "To us: still a panda. To the AI: a 'gibbon', with 99.3% confidence.", "duration": 11 },
+    { "role": "explanation", "template": "breakdown", "text": "These are called adversarial examples.", "items": [ { "title": "Tiny changes", "detail": "Pixel tweaks people can't notice" }, { "title": "Big effects", "detail": "Confident, wrong predictions" }, { "title": "Physical world", "detail": "In tests, stickers on stop signs fooled models" } ], "duration": 11 },
+    { "role": "insight", "template": "kinetic", "text": "Models can be trained to resist such attacks — but it remains an open problem.", "emphasis": ["open problem"], "duration": 6 },
+    { "role": "takeaway", "template": "kinetic", "text": "High confidence is not the same as understanding.", "emphasis": ["understanding"], "duration": 5 }
+  ],
+  "sources": [
+    { "title": "Explaining and Harnessing Adversarial Examples", "publisher": "arXiv (Goodfellow, Shlens & Szegedy)", "year": 2014, "url": "https://arxiv.org/abs/1412.6572" },
+    { "title": "Intriguing properties of neural networks", "publisher": "arXiv (Szegedy et al.)", "year": 2013, "url": "https://arxiv.org/abs/1312.6199" },
+    { "title": "Robust Physical-World Attacks on Deep Learning Models", "publisher": "arXiv (Eykholt et al.)", "year": 2017, "url": "https://arxiv.org/abs/1707.08945" }
+  ],
+  "tags": ["machine learning", "security", "computer vision"]
+}
