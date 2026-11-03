@@ -1,0 +1,89 @@
+{
+  "origin": "generated",
+  "id": "mere-exposure-effect",
+  "title": "Why Familiarity Breeds Liking",
+  "category": "psychology",
+  "language": "en",
+  "summary": "Discover the mere exposure effect, a psychological phenomenon where people develop a preference for things simply because they are familiar with them.",
+  "evidence": "supported",
+  "evidenceNote": "While widely demonstrated across various stimuli, research also shows that excessive exposure can lead to an inverted-U shape where liking eventually declines into wear-out or ad fatigue.",
+  "scenes": [
+    {
+      "role": "hook",
+      "text": "Why do you start to like a song only after hearing it a few times?",
+      "duration": 5,
+      "template": "kinetic"
+    },
+    {
+      "role": "context",
+      "text": "Known as the mere-exposure effect, it's a psychological phenomenon where familiarity breeds preference.",
+      "duration": 5,
+      "emphasis": [
+        "mere-exposure effect",
+        "familiarity breeds preference"
+      ],
+      "template": "illustration",
+      "visual": "brain"
+    },
+    {
+      "role": "example",
+      "text": "Newly hatched chicks preferred the tone that was played to them while they were still in the egg.",
+      "duration": 5,
+      "template": "illustration",
+      "visual": "target"
+    },
+    {
+      "role": "insight",
+      "text": "Robert Zajonc found that affective reactions like liking can happen with minimal stimulus input, even without conscious awareness.",
+      "duration": 6,
+      "template": "illustration",
+      "visual": "eye"
+    },
+    {
+      "role": "fact",
+      "text": "A 2017 meta-analysis pooled this many findings on repeated exposure.",
+      "duration": 6,
+      "template": "stat",
+      "value": 268
+    },
+    {
+      "role": "insight",
+      "text": "Too much repetition can backfire into an inverted-U shape, leading to wear-out or ad fatigue.",
+      "duration": 6,
+      "template": "illustration",
+      "visual": "growth"
+    },
+    {
+      "role": "takeaway",
+      "text": "Simply put: we often grow to like things just because we see them more often.",
+      "duration": 5,
+      "template": "kinetic"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Mere-exposure effect",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Mere-exposure_effect",
+      "year": 2023
+    },
+    {
+      "title": "Ad fatigue",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Ad_fatigue",
+      "year": 2023
+    },
+    {
+      "title": "A re-examination of the mere exposure effect: The influence of repeated exposure on recognition, familiarity, and liking",
+      "publisher": "Psychological bulletin",
+      "url": "https://doi.org/10.1037/bul0000085",
+      "year": 2017
+    }
+  ],
+  "tags": [
+    "psychology",
+    "familiarity",
+    "behavior",
+    "cognition"
+  ]
+}

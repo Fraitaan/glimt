@@ -5,10 +5,8 @@
 #             productivity, ai, business, curiosities
 # When the queue is empty, today's featured Wikipedia article is used instead.
 
-placebo effect | psychology
-mere exposure effect | psychology
-frequency illusion | psychology
 Stockholm syndrome | psychology
+placebo effect | psychology
 vaccine immune response | health
 yawning | health
 circadian rhythm | health
