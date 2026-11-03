@@ -41,7 +41,7 @@
     },
     {
       "role": "fact",
-      "text": "A 2017 meta-analysis pooled this many findings from 81 articles on repeated exposure.",
+      "text": "A 2017 meta-analysis pooled this many findings on repeated exposure.",
       "duration": 6,
       "template": "stat",
       "value": 268
