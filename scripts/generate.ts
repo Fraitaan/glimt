@@ -25,6 +25,7 @@ import { join } from 'node:path'
 import { parseArgs } from 'node:util'
 import { buildPrompt, type SourceDoc } from '../src/content/prompt.ts'
 import { CATEGORY_IDS } from '../src/content/categories.ts'
+import { ILLUSTRATION_KEYS } from '../src/content/illustrationKeys.ts'
 import { checkData, DRAFTS_DIR, LIBRARY_DIR, ROOT } from './lib/content-files.ts'
 import { checkLinks } from './lib/links.ts'
 import { featuredTopic, research } from './lib/sources.ts'
@@ -202,6 +203,41 @@ async function callModel(prompt: string): Promise<string> {
   throw last
 }
 
+const TEMPLATES = ['kinetic', 'illustration', 'comparison', 'timeline', 'stat', 'breakdown', 'question', 'reveal']
+const isIllustration = (v: unknown) => (ILLUSTRATION_KEYS as readonly unknown[]).includes(v)
+
+/**
+ * Fixes the small mix-ups models make with scene fields, so one bad word doesn't
+ * throw away a whole explainer: an illustration name used as the template, or an
+ * illustration that doesn't exist. Returns a note per change for the PR.
+ */
+function repairScenes(raw: unknown): string[] {
+  const scenes = (raw as { scenes?: unknown })?.scenes
+  if (!Array.isArray(scenes)) return []
+  const notes: string[] = []
+  scenes.forEach((s: Record<string, unknown>, n) => {
+    if (!s || typeof s !== 'object') return
+    if (!TEMPLATES.includes(s.template as string)) {
+      if (isIllustration(s.template)) {
+        notes.push(`scene ${n + 1}: template "${s.template}" changed to illustration "${s.template}"`)
+        s.visual = s.template
+        s.template = 'illustration'
+      } else {
+        notes.push(`scene ${n + 1}: unknown template "${s.template}" changed to kinetic`)
+        s.template = 'kinetic'
+      }
+    }
+    if ('visual' in s && !isIllustration(s.visual)) {
+      if (s.template === 'illustration') {
+        notes.push(`scene ${n + 1}: no illustration called "${s.visual}", shown as kinetic text instead`)
+        s.template = 'kinetic'
+      } else notes.push(`scene ${n + 1}: no illustration called "${s.visual}", removed`)
+      delete s.visual
+    }
+  })
+  return notes
+}
+
 function extractJson(text: string): unknown {
   const start = text.indexOf('{')
   const end = text.lastIndexOf('}')
@@ -260,6 +296,8 @@ for (const [i, job] of jobs.entries()) {
     continue
   }
 
+  const repairs = repairScenes(raw)
+  repairs.forEach((r) => console.log(`  ~ repaired ${r}`))
   const id = (raw as { id?: string })?.id ?? slug(job.topic)
   const result = checkData({ origin: 'generated', ...(raw as object) }, `${id}.json`)
   const exp = result.experience
@@ -296,6 +334,7 @@ for (const [i, job] of jobs.entries()) {
       lines.push(`- ${mark}[${s.title}](${s.url}) — ${s.publisher}${s.year ? `, ${s.year}` : ''}`)
       console.log(`  ${mark || '· '}source ${s.url}${r ? ` (${r.detail})` : ''}`)
     }
+    if (repairs.length) lines.push('', '**Repaired automatically** (check these scenes)', ...repairs.map((r) => `- ${r}`))
     if (result.warnings.length) lines.push('', '**Warnings**', ...result.warnings.map((w) => `- ${w}`))
     result.warnings.forEach((w) => console.log(`  ! ${w}`))
     console.log(`  ✓ draft saved: ${file}`)
