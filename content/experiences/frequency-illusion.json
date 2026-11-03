@@ -1,0 +1,94 @@
+{
+  "origin": "generated",
+  "id": "frequency-illusion",
+  "title": "Why Do You Suddenly See New Things Everywhere?",
+  "category": "psychology",
+  "language": "en",
+  "summary": "The frequency illusion, or Baader–Meinhof phenomenon, is a cognitive bias where you notice a concept more often after recently becoming aware of it.",
+  "evidence": "established",
+  "evidenceNote": "The core phenomenon is well-documented, with consensus pointing to interactions between selective attention and confirmation bias.",
+  "scenes": [
+    {
+      "role": "hook",
+      "text": "Ever learn a new word and suddenly hear it everywhere?",
+      "duration": 4,
+      "emphasis": [
+        "suddenly hear it everywhere"
+      ],
+      "template": "kinetic"
+    },
+    {
+      "role": "context",
+      "text": "This is known as the frequency illusion, or the Baader–Meinhof phenomenon.",
+      "duration": 4,
+      "emphasis": [
+        "frequency illusion"
+      ],
+      "template": "illustration",
+      "visual": "brain"
+    },
+    {
+      "role": "explanation",
+      "text": "It happens due to two psychological processes: selective attention and confirmation bias.",
+      "duration": 5,
+      "emphasis": [
+        "selective attention",
+        "confirmation bias"
+      ],
+      "template": "breakdown",
+      "items": [
+        {
+          "title": "Selective Attention",
+          "detail": "Filtering for what you are currently focusing on."
+        },
+        {
+          "title": "Confirmation Bias",
+          "detail": "Seeking evidence that confirms your beliefs while overlooking the rest."
+        }
+      ]
+    },
+    {
+      "role": "example",
+      "text": "After mentioning a German militant group once in 1994, Terry Mullen kept noticing the name in the news.",
+      "duration": 5,
+      "emphasis": [
+        "Terry Mullen"
+      ],
+      "template": "illustration",
+      "visual": "calendar"
+    },
+    {
+      "role": "insight",
+      "text": "In reality, the frequency of the object has not changed; your brain is just filtering for it.",
+      "duration": 5,
+      "emphasis": [
+        "has not changed"
+      ],
+      "template": "illustration",
+      "visual": "eye"
+    },
+    {
+      "role": "takeaway",
+      "text": "Your brain simply notices what it is currently looking for.",
+      "duration": 4,
+      "emphasis": [
+        "notices what it is currently looking for"
+      ],
+      "template": "kinetic"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Frequency illusion",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Frequency_illusion",
+      "year": 2024
+    }
+  ],
+  "tags": [
+    "psychology",
+    "cognitive-bias",
+    "attention",
+    "perception"
+  ]
+}

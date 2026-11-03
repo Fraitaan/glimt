@@ -1,0 +1,65 @@
+{
+  "origin": "generated",
+  "id": "understanding-the-placebo-effect",
+  "title": "What Is the Placebo Effect, Really?",
+  "category": "psychology",
+  "language": "en",
+  "summary": "Explore what a placebo is, how expectations and psychological mechanisms can relieve pain and symptoms, and why the effect remains debated.",
+  "evidence": "established",
+  "evidenceNote": "While placebo responses for subjective outcomes like pain are well-documented, overall clinical relevance and the exact size of the effect remain widely debated among researchers.",
+  "scenes": [
+    {
+      "role": "hook",
+      "text": "Can a sugar pill make your pain actually go away?",
+      "duration": 5,
+      "template": "kinetic"
+    },
+    {
+      "role": "context",
+      "text": "A placebo is a medicine or treatment intended to appear genuine, but with no pharmaceutical effect.",
+      "duration": 6,
+      "template": "illustration",
+      "visual": "pills"
+    },
+    {
+      "role": "explanation",
+      "text": "Modern studies find placebos can affect subjective outcomes like pain and nausea, but do not impact the disease itself.",
+      "duration": 7,
+      "template": "comparison",
+      "left": {
+        "label": "What it affects",
+        "text": "Pain perception and nausea"
+      },
+      "right": {
+        "label": "What it doesn't",
+        "text": "The actual underlying disease"
+      }
+    },
+    {
+      "role": "insight",
+      "text": "Regression to the mean",
+      "duration": 7,
+      "template": "scale"
+    },
+    {
+      "role": "takeaway",
+      "text": "Placebos relieve symptoms through psychological mechanisms, yet they remain widely misunderstood.",
+      "duration": 5,
+      "template": "kinetic"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Placebo",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Placebo",
+      "year": 2024
+    }
+  ],
+  "tags": [
+    "placebo",
+    "psychology",
+    "pain",
+    "science"
+  ]
+}
