@@ -100,7 +100,7 @@ One-time setup:
 3. Settings → Actions → General → Workflow permissions → tick **Allow GitHub Actions to create and approve pull requests**.
 4. Optional: run it now from the Actions tab (*Generate new explainers* → *Run workflow*) and pick how many topics.
 
-Optional repository variables: `AI_MODEL` (default `gemini-3.8-flash`), `AI_REASONING_EFFORT` (default `low`; set to `none` or remove support for providers that reject it) and `AI_BASE_URL` (to switch to another OpenAI-compatible provider such as Groq or OpenRouter). Free-tier limits and model names change — check them in AI Studio. On free tiers Google may use prompts to improve its products, which is fine here since everything is public material.
+Optional repository variables: `AI_MODEL` (default `gemini-3.8-flash`), `AI_REASONING_EFFORT` (default `low`; set to `none` or remove support for providers that reject it) and `AI_BASE_URL` (to switch to another OpenAI-compatible provider such as Groq or OpenRouter). When the model is overloaded (a common free-tier 503), the job retries and then tries other Gemini *flash* models the key has access to. Free-tier limits and model names change — check them in AI Studio. On free tiers Google may use prompts to improve its products, which is fine here since everything is public material.
 
 Cost: 0 kr. GitHub Actions minutes are free for public repos and the private-repo free quota is far more than this needs. The job does not use Claude at all.
 

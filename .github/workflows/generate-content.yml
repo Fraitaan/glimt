@@ -30,7 +30,7 @@ concurrency:
 jobs:
   generate:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v6
       - uses: actions/setup-node@v6
@@ -55,6 +55,7 @@ jobs:
           OPENAI_MODEL: ${{ vars.AI_MODEL || 'gemini-3.8-flash' }}
           OPENAI_API_KEY: ${{ secrets.AI_API_KEY }}
           OPENAI_REASONING_EFFORT: ${{ vars.AI_REASONING_EFFORT || 'low' }}
+          OPENAI_FALLBACK: auto # try other flash models when the main one is overloaded
           RESEARCH_CONTACT: ${{ github.server_url }}/${{ github.repository }}
         run: npm run generate -- --from-queue "${{ inputs.count || '3' }}" --report "$RUNNER_TEMP/report.md"
 

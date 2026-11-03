@@ -121,19 +121,43 @@ async function callAnthropic(prompt: string): Promise<string> {
   return response.content.flatMap((b) => (b.type === 'text' ? [b.text] : [])).join('')
 }
 
-async function callOpenAICompatible(prompt: string): Promise<string> {
-  const base = (process.env.OPENAI_BASE_URL || 'https://api.openai.com/v1').replace(/\/$/, '')
+const OPENAI_BASE = (process.env.OPENAI_BASE_URL || 'https://api.openai.com/v1').replace(/\/$/, '')
+const openAIAuth: Record<string, string> = process.env.OPENAI_API_KEY ? { authorization: `Bearer ${process.env.OPENAI_API_KEY}` } : {}
+
+/**
+ * Models to try, in order: OPENAI_MODEL (comma-separated), then, with
+ * OPENAI_FALLBACK=auto, a few other "flash" models the key can use. Free tiers
+ * are often briefly overloaded (503), and a sibling model usually still answers.
+ */
+let modelList: Promise<string[]> | undefined
+function openAIModels() {
+  return (modelList ??= (async () => {
+    const primary = (process.env.OPENAI_MODEL || 'gpt-4o-mini').split(',').map((m) => m.trim()).filter(Boolean)
+    if (process.env.OPENAI_FALLBACK !== 'auto') return primary
+    try {
+      const res = await fetch(`${OPENAI_BASE}/models`, { headers: openAIAuth, signal: AbortSignal.timeout(20000) })
+      const ids = ((await res.json()) as { data?: { id: string }[] }).data?.map((m) => m.id.replace(/^models\//, '')) ?? []
+      const extra = ids
+        .filter((id) => /flash/i.test(id) && !/image|tts|live|audio|embed|exp|preview/i.test(id) && !primary.includes(id))
+        .sort((a, b) => b.localeCompare(a, undefined, { numeric: true }))
+        .slice(0, 3)
+      if (extra.length) console.log(`Fallback models: ${extra.join(', ')}`)
+      return [...primary, ...extra]
+    } catch {
+      return primary
+    }
+  })())
+}
+
+async function callOpenAICompatible(prompt: string, model: string): Promise<string> {
   const started = Date.now()
   let res: Response
   try {
-    res = await fetch(`${base}/chat/completions`, {
+    res = await fetch(`${OPENAI_BASE}/chat/completions`, {
       method: 'POST',
-      headers: {
-        'content-type': 'application/json',
-        ...(process.env.OPENAI_API_KEY ? { authorization: `Bearer ${process.env.OPENAI_API_KEY}` } : {}),
-      },
+      headers: { 'content-type': 'application/json', ...openAIAuth },
       body: JSON.stringify({
-        model: process.env.OPENAI_MODEL || 'gpt-4o-mini',
+        model,
         temperature: 0.4,
         // Summarising given sources needs little deliberation, and reasoning models
         // that "think" at full depth by default can take minutes. Only sent when set,
@@ -141,13 +165,13 @@ async function callOpenAICompatible(prompt: string): Promise<string> {
         ...(process.env.OPENAI_REASONING_EFFORT ? { reasoning_effort: process.env.OPENAI_REASONING_EFFORT } : {}),
         messages: [{ role: 'user', content: prompt }],
       }),
-      signal: AbortSignal.timeout(300000),
+      signal: AbortSignal.timeout(150000),
     })
   } catch (e) {
-    if ((e as Error).name === 'TimeoutError') throw new RetryableError('no response within 5 minutes')
+    if ((e as Error).name === 'TimeoutError') throw new RetryableError('no response within 150 s')
     throw e
   }
-  console.log(`  model answered in ${Math.round((Date.now() - started) / 1000)}s`)
+  console.log(`  ${model} answered in ${Math.round((Date.now() - started) / 1000)}s (HTTP ${res.status})`)
   if (res.status === 429 || res.status >= 500) throw new RetryableError(`${res.status} ${(await res.text()).slice(0, 300)}`)
   if (!res.ok) throw new Error(`${res.status} ${(await res.text()).slice(0, 500)}`)
   const data = (await res.json()) as { choices: { message: { content: string } }[] }
@@ -155,19 +179,27 @@ async function callOpenAICompatible(prompt: string): Promise<string> {
 }
 
 async function callModel(prompt: string): Promise<string> {
-  const call = values.provider === 'anthropic' ? callAnthropic : callOpenAICompatible
-  for (const wait of [0, 30, 90]) {
-    if (wait) {
-      console.log(`  … rate limited or busy, retrying in ${wait}s`)
-      await sleep(wait * 1000)
-    }
-    try {
-      return await call(prompt)
-    } catch (e) {
-      if (!(e instanceof RetryableError) || wait === 90) throw e
+  const attempts: [string, (p: string) => Promise<string>][] =
+    values.provider === 'anthropic'
+      ? [['claude', callAnthropic]]
+      : (await openAIModels()).map((m) => [m, (p: string) => callOpenAICompatible(p, m)])
+  let last: unknown
+  for (const [name, call] of attempts) {
+    for (const wait of [0, 30]) {
+      if (wait) {
+        console.log(`  … ${name} busy, retrying in ${wait}s`)
+        await sleep(wait * 1000)
+      }
+      try {
+        return await call(prompt)
+      } catch (e) {
+        if (!(e instanceof RetryableError)) throw e
+        last = e
+        console.log(`  ! ${name}: ${(e as Error).message.slice(0, 120)}`)
+      }
     }
   }
-  throw new Error('unreachable')
+  throw last
 }
 
 function extractJson(text: string): unknown {
