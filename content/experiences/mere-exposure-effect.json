@@ -41,7 +41,7 @@
     },
     {
       "role": "fact",
-      "text": "A meta-analysis evaluated curve estimates from numerous research articles.",
+      "text": "A 2017 meta-analysis pooled this many findings from 81 articles on repeated exposure.",
       "duration": 6,
       "template": "stat",
       "value": 268
