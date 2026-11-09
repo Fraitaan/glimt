@@ -1,0 +1,94 @@
+{
+  "origin": "generated",
+  "id": "stockholm-syndrome-reality",
+  "title": "The Truth About Stockholm Syndrome",
+  "category": "psychology",
+  "language": "en",
+  "summary": "Stockholm syndrome describes hostages bonding with captors, but psychologists view the evidence as dubious and it is not in the DSM.",
+  "evidence": "debated",
+  "evidenceNote": "Stockholm syndrome has never been included in the DSM-5. Psychologists generally consider evidence for the condition to be dubious or nonexistent, with many foundational details from the 1973 bank robbery either partly or entirely fabricated.",
+  "scenes": [
+    {
+      "role": "hook",
+      "text": "What if a famous psychological disorder was actually invented by someone who never even met the victims?",
+      "duration": 5,
+      "template": "kinetic",
+      "emphasis": [
+        "invented by someone who never even met the victims"
+      ]
+    },
+    {
+      "role": "context",
+      "text": "The term stems from a 1973 bank robbery in Stockholm where four employees were held captive for six days in a bank vault.",
+      "duration": 6,
+      "template": "illustration",
+      "visual": "stairs",
+      "emphasis": [
+        "1973 bank robbery in Stockholm"
+      ]
+    },
+    {
+      "role": "fact",
+      "text": "Criminologist Nils Bejerot coined the term after the bank robbery, despite never speaking to the hostages.",
+      "duration": 6,
+      "template": "stat",
+      "value": 1973,
+      "prefix": "In ",
+      "emphasis": [
+        "never spoke to or met the hostages"
+      ]
+    },
+    {
+      "role": "explanation",
+      "text": "Hostage Kristin Enmark later explained she was merely trying to survive, and actually feared police incompetence more than the robbers.",
+      "duration": 6,
+      "template": "breakdown",
+      "items": [
+        {
+          "title": "Survival Mode",
+          "detail": "Doing what it takes to stay alive during the ordeal."
+        },
+        {
+          "title": "Police Fear",
+          "detail": "Hostages felt police actions posed a direct threat to their lives."
+        }
+      ],
+      "emphasis": [
+        "merely trying to survive"
+      ]
+    },
+    {
+      "role": "insight",
+      "text": "Is Stockholm syndrome an official psychiatric diagnosis?",
+      "duration": 5,
+      "template": "question",
+      "answer": "No. It has never been included in the DSM, and psychologists consider evidence for it to be dubious.",
+      "emphasis": [
+        "never been included in the DSM-5"
+      ]
+    },
+    {
+      "role": "takeaway",
+      "text": "Pop psychology often turns survival tactics and media hype into medical facts.",
+      "duration": 5,
+      "template": "kinetic",
+      "emphasis": [
+        "survival tactics and media hype"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "Stockholm syndrome",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Stockholm_syndrome",
+      "year": 2023
+    }
+  ],
+  "tags": [
+    "psychology",
+    "debated",
+    "history",
+    "behavior"
+  ]
+}
