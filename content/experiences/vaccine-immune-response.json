@@ -1,0 +1,80 @@
+{
+  "origin": "generated",
+  "id": "vaccine-immune-response",
+  "title": "How Vaccines Train Your Immune System",
+  "category": "health",
+  "language": "en",
+  "summary": "Vaccines work by training the immune system to recognize and attack specific antigens, though individual immune responses can vary due to factors like genetics.",
+  "evidence": "established",
+  "scenes": [
+    {
+      "role": "hook",
+      "text": "How does your body learn to fight off dangerous diseases before they ever strike?",
+      "duration": 5,
+      "template": "kinetic"
+    },
+    {
+      "role": "context",
+      "text": "Antigen-presenting cells take up vaccine antigens, process them, and present them to T-cells to activate the adaptive immune system.",
+      "duration": 6,
+      "template": "illustration",
+      "visual": "neurons"
+    },
+    {
+      "role": "explanation",
+      "text": "Tumor antigen vaccines work the same way as viral vaccines, training the immune system to target cells containing specific antigens.",
+      "duration": 6,
+      "template": "breakdown",
+      "items": [
+        {
+          "title": "Viral Vaccines",
+          "detail": "Derived from viruses or infected cells."
+        },
+        {
+          "title": "Tumor Vaccines",
+          "detail": "Derived from cancer cells."
+        }
+      ]
+    },
+    {
+      "role": "example",
+      "text": "Studies on dialysis patients show that individual factors like age, diabetes, and genetics can influence the immune response to vaccines.",
+      "duration": 6,
+      "template": "illustration",
+      "visual": "scale"
+    },
+    {
+      "role": "insight",
+      "text": "The emerging field of vaccinomics studies how genetic polymorphism leads to individual and population variations in vaccine immune responses.",
+      "duration": 6,
+      "template": "illustration",
+      "visual": "target"
+    },
+    {
+      "role": "takeaway",
+      "text": "Vaccines successfully train the adaptive immune system by introducing specific antigens to trigger targeted defense mechanisms.",
+      "duration": 6,
+      "template": "kinetic"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Cancer vaccine",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Cancer_vaccine",
+      "year": 2024
+    },
+    {
+      "title": "Heterogeneity in vaccine immune response: the role of immunogenetics and the emerging field of vaccinomics",
+      "publisher": "Clinical pharmacology and therapeutics",
+      "url": "https://doi.org/10.1038/sj.clpt.6100415",
+      "year": 2007
+    }
+  ],
+  "tags": [
+    "vaccines",
+    "immune-system",
+    "health",
+    "science"
+  ]
+}

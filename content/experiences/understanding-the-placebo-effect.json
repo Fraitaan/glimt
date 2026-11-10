@@ -1,0 +1,81 @@
+{
+  "origin": "generated",
+  "id": "understanding-the-placebo-effect",
+  "title": "What Is the Placebo Effect, Really?",
+  "category": "psychology",
+  "language": "en",
+  "summary": "Explore what a placebo is, how expectations and psychological mechanisms drive the placebo response, and why its actual clinical effects remain debated.",
+  "evidence": "established",
+  "evidenceNote": "While subjective outcomes like pain relief are well-documented, reviews suggest placebos do not generally affect underlying diseases.",
+  "scenes": [
+    {
+      "role": "hook",
+      "text": "Can a sugar pill make your pain disappear?",
+      "duration": 5,
+      "template": "kinetic"
+    },
+    {
+      "role": "context",
+      "text": "A placebo is a treatment with no pharmaceutical effect, like an inert sugar pill or saline injection.",
+      "duration": 6,
+      "template": "kinetic"
+    },
+    {
+      "role": "explanation",
+      "text": "In clinical trials, the placebo response measures any change in the control group after receiving the inactive treatment.",
+      "duration": 7,
+      "template": "breakdown",
+      "items": [
+        {
+          "title": "Sugar Pill",
+          "detail": "Inert tablet with no drug"
+        },
+        {
+          "title": "Saline Injection",
+          "detail": "Inert liquid injection"
+        }
+      ]
+    },
+    {
+      "role": "insight",
+      "text": "Modern studies find placebos can affect subjective outcomes like pain and nausea, but do not impact the disease itself.",
+      "duration": 7,
+      "template": "comparison",
+      "left": {
+        "label": "What it affects",
+        "text": "Subjective pain and nausea perception"
+      },
+      "right": {
+        "label": "What it misses",
+        "text": "The underlying disease"
+      }
+    },
+    {
+      "role": "fact",
+      "text": "A 2010 Cochrane review concluded that placebo interventions do not have important clinical effects in general.",
+      "duration": 7,
+      "template": "illustration",
+      "visual": "scale"
+    },
+    {
+      "role": "takeaway",
+      "text": "Placebos highlight the complex ways our expectations and psychological mechanisms influence how we perceive symptoms.",
+      "duration": 6,
+      "template": "kinetic"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Placebo",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Placebo",
+      "year": 2024
+    }
+  ],
+  "tags": [
+    "placebo",
+    "psychology",
+    "clinical trials",
+    "pain relief"
+  ]
+}
