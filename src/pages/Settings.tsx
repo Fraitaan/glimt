@@ -20,25 +20,6 @@ export function Settings() {
         <h1>{t('settings.title')}</h1>
       </header>
 
-      <Section title={t('settings.language')}>
-        <Segmented
-          value={s.language}
-          options={[
-            { value: 'en', label: 'English' },
-            { value: 'sv', label: 'Svenska' },
-          ]}
-          onChange={(language) => actions.updateSettings({ language })}
-        />
-        {s.language !== 'en' && (
-          <Toggle
-            label={t('settings.otherLanguages')}
-            desc={t('settings.otherLanguages.desc')}
-            checked={s.otherLanguages}
-            onChange={(otherLanguages) => actions.updateSettings({ otherLanguages })}
-          />
-        )}
-      </Section>
-
       <Section title={t('settings.narration')}>
         {narrationSupported ? (
           <>
