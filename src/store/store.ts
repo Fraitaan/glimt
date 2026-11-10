@@ -51,11 +51,9 @@ export interface AppState {
 
 const KEY = 'smart-learning:v1'
 
-const defaultLanguage: Lang = typeof navigator !== 'undefined' && /^sv\b/i.test(navigator.language) ? 'sv' : 'en'
-
 export const DEFAULT_SETTINGS: Settings = {
-  language: defaultLanguage,
-  otherLanguages: true,
+  language: 'en',
+  otherLanguages: false,
   narration: false,
   narrationRate: 1,
   animation: 'auto',
@@ -89,7 +87,8 @@ function normalize(data: Partial<AppState>): AppState {
     : []
   return {
     version: 1,
-    settings: { ...base.settings, ...data.settings, mix: { ...base.settings.mix, ...data.settings?.mix } },
+    // The app is English-only for now, so older saved Swedish settings are reset.
+    settings: { ...base.settings, ...data.settings, language: 'en', otherLanguages: false, mix: { ...base.settings.mix, ...data.settings?.mix } },
     interactions: data.interactions && typeof data.interactions === 'object' ? data.interactions : {},
     custom,
     hints: Array.isArray(data.hints) ? data.hints : [],
