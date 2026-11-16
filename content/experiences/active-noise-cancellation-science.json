@@ -1,0 +1,92 @@
+{
+  "origin": "generated",
+  "id": "active-noise-cancellation-science",
+  "title": "How Active Noise Cancellation Works",
+  "category": "science",
+  "language": "en",
+  "summary": "Active noise cancellation uses electronics and speakers to emit an inverted sound wave that destructively interferes with and cancels out unwanted background noise.",
+  "evidence": "established",
+  "scenes": [
+    {
+      "role": "hook",
+      "text": "How do noise-cancelling headphones literally make sound disappear?",
+      "duration": 5,
+      "template": "kinetic"
+    },
+    {
+      "role": "context",
+      "text": "Sound travels as a pressure wave of alternating compressions and rarefactions.",
+      "duration": 5,
+      "emphasis": [
+        "pressure wave"
+      ],
+      "template": "illustration",
+      "visual": "waterbear"
+    },
+    {
+      "role": "explanation",
+      "text": "Headphones emit a sound wave with the same amplitude but an inverted phase.",
+      "duration": 6,
+      "emphasis": [
+        "inverted phase"
+      ],
+      "template": "kinetic"
+    },
+    {
+      "role": "example",
+      "text": "When the original noise wave is high, the cancelling wave is low.",
+      "duration": 5,
+      "template": "comparison",
+      "left": {
+        "label": "Original Noise",
+        "text": "High pressure wave"
+      },
+      "right": {
+        "label": "Cancelling Wave",
+        "text": "Low inverted wave"
+      }
+    },
+    {
+      "role": "fact",
+      "text": "In 1957, Willard Meeker developed an earmuff model with a 20 dB attenuation.",
+      "duration": 6,
+      "template": "stat",
+      "value": 20,
+      "suffix": " dB",
+      "decimals": 0
+    },
+    {
+      "role": "insight",
+      "text": "Periodic low-frequency sounds like engines are much easier to cancel than random noises.",
+      "duration": 6,
+      "template": "reveal",
+      "reveal": "Low frequencies have longer wavelengths that are simpler to invert."
+    },
+    {
+      "role": "takeaway",
+      "text": "Destructive interference turns two sound waves into silence.",
+      "duration": 5,
+      "template": "kinetic"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Active noise control",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Active_noise_control",
+      "year": 2024
+    },
+    {
+      "title": "Noise-cancelling headphones",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Noise-cancelling_headphones",
+      "year": 2024
+    }
+  ],
+  "tags": [
+    "physics",
+    "sound",
+    "headphones",
+    "acoustics"
+  ]
+}
