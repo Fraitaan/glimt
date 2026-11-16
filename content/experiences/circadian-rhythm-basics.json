@@ -1,0 +1,81 @@
+{
+  "origin": "generated",
+  "id": "circadian-rhythm-basics",
+  "title": "The 24-Hour Internal Clock Inside Your Body",
+  "category": "health",
+  "language": "en",
+  "summary": "Discover how natural 24-hour oscillations regulate biological processes, and how external cues like light keep our internal clocks synchronized.",
+  "evidence": "established",
+  "evidenceNote": "While the core 24-hour endogenous oscillations and their regulation by the suprachiasmatic nucleus are well-established, the precise functional importance of certain specific clock genes like CLOCK continues to be studied.",
+  "scenes": [
+    {
+      "role": "hook",
+      "text": "What tells your body when to sleep, wake, and eat every single day?",
+      "duration": 4,
+      "template": "kinetic"
+    },
+    {
+      "role": "context",
+      "text": "A circadian rhythm is a natural oscillation that repeats roughly every 24 hours inside living organisms.",
+      "duration": 5,
+      "emphasis": [
+        "roughly every 24 hours"
+      ],
+      "template": "illustration",
+      "visual": "clock"
+    },
+    {
+      "role": "example",
+      "text": "As early as the 4th century BC, observers noted that certain plants close their leaves at night and open them at sunrise.",
+      "duration": 6,
+      "emphasis": [
+        "close their leaves at night",
+        "open them at sunrise"
+      ],
+      "template": "illustration",
+      "visual": "sun"
+    },
+    {
+      "role": "insight",
+      "text": "These rhythms are endogenous, meaning they originate within the organism and persist even without external cues.",
+      "duration": 5,
+      "emphasis": [
+        "endogenous",
+        "originate within the organism"
+      ],
+      "template": "illustration",
+      "visual": "neurons"
+    },
+    {
+      "role": "fact",
+      "text": "External cues like light and temperature, called zeitgebers, adjust these internal rhythms to the local environment.",
+      "duration": 5,
+      "emphasis": [
+        "zeitgebers",
+        "light and temperature"
+      ],
+      "template": "illustration",
+      "visual": "lightbulb"
+    },
+    {
+      "role": "takeaway",
+      "text": "Your internal clock coordinates biological processes to match the solar day.",
+      "duration": 5,
+      "template": "kinetic"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Circadian rhythm",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Circadian_rhythm",
+      "year": 2024
+    }
+  ],
+  "tags": [
+    "circadian",
+    "health",
+    "biology",
+    "sleep"
+  ]
+}

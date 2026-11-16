@@ -1,0 +1,86 @@
+{
+  "origin": "generated",
+  "id": "the-science-of-yawning",
+  "title": "Why Do We Yawn? The Science and Theories",
+  "category": "health",
+  "language": "en",
+  "summary": "Explore what science knows—and doesn't know—about the ancient reflex of yawning, from brain cooling to contagious group signaling.",
+  "evidence": "debated",
+  "evidenceNote": "While several physiological theories exist, including brain thermoregulation and group alertness signaling, scholars have proposed around twenty reasons for yawning with little agreement on any single primary cause.",
+  "scenes": [
+    {
+      "role": "hook",
+      "text": "Why can just seeing someone yawn make you do it too?",
+      "duration": 5,
+      "template": "kinetic"
+    },
+    {
+      "role": "context",
+      "text": "A yawn is an ancient reflex found across almost all vertebrates, from fish and birds to humans.",
+      "duration": 5,
+      "illustration": "brain",
+      "template": "illustration"
+    },
+    {
+      "role": "explanation",
+      "text": "During a yawn, muscles around the airway fully stretch, dilating the lungs and throat to three or four times their normal size.",
+      "duration": 6,
+      "emphasis": [
+        "fully stretch",
+        "three or four times"
+      ],
+      "template": "kinetic"
+    },
+    {
+      "role": "insight",
+      "text": "Researchers have proposed about twenty reasons for yawning, but there is little agreement on which one comes first.",
+      "duration": 6,
+      "template": "kinetic"
+    },
+    {
+      "role": "example",
+      "text": "One prominent theory suggests yawning acts as a thermoregulatory mechanism to keep the brain cool.",
+      "duration": 6,
+      "illustration": "sun",
+      "template": "illustration"
+    },
+    {
+      "role": "fact",
+      "text": "Another hypothesis suggests contagious yawning helps synchronize alertness and sleeping patterns within an animal group.",
+      "duration": 6,
+      "template": "kinetic"
+    },
+    {
+      "role": "takeaway",
+      "text": "Though its exact physiological function remains unknown, yawning is controlled by complex neurotransmitters in the brain.",
+      "duration": 6,
+      "template": "kinetic"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Yawn",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Yawn",
+      "year": 2023
+    },
+    {
+      "title": "The neuropharmacology of yawning",
+      "publisher": "European journal of pharmacology (Argiolas A et al.)",
+      "url": "https://doi.org/10.1016/s0014-2999(97)01538-0",
+      "year": 1998
+    },
+    {
+      "title": "Yawning and thermoregulation",
+      "publisher": "Physiology & behavior (Gallup AC et al.)",
+      "url": "https://doi.org/10.1016/j.physbeh.2008.05.003",
+      "year": 2008
+    }
+  ],
+  "tags": [
+    "health",
+    "science",
+    "biology",
+    "brain"
+  ]
+}
